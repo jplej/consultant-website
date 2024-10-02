@@ -1,0 +1,248 @@
+/* ------------------------------------- */
+/*           Nord Theme Colors           */
+/* ------------------------------------- */
+
+:root {
+    --nord0: #2E3440; /* Polar Night - Darkest */
+    --nord1: #3B4252; /* Polar Night - Dark */
+    --nord2: #434C5E; /* Polar Night */
+    --nord3: #4C566A; /* Polar Night - Lightest */
+    --nord4: #D8DEE9; /* Snow Storm - Light */
+    --nord5: #E5E9F0; /* Snow Storm */
+    --nord6: #ECEFF4; /* Snow Storm - Lightest */
+    --nord7: #8FBCBB; /* Frost */
+    --nord8: #88C0D0; /* Frost */
+    --nord9: #81A1C1; /* Frost */
+    --nord10: #5E81AC; /* Frost - Dark */
+    --nord11: #BF616A; /* Aurora - Red */
+    --nord12: #D08770; /* Aurora - Orange */
+    --nord13: #EBCB8B; /* Aurora - Yellow */
+    --nord14: #A3BE8C; /* Aurora - Green */
+    --nord15: #B48EAD; /* Aurora - Purple */
+  }
+  
+
+/* ------------------------------------- */
+/*          Light & Dark Mode Setup      */
+/* ------------------------------------- */
+
+/* Light Mode Variables */
+
+$bg-color: var(--nord6); /* Light background */
+$ui-color: var(--nord3); /* UI Background */
+$raised-ui-color: var(--nord4); /* Raised elements */
+
+$main-text-color: var(--nord3); /* Dark text */
+$main-text-color: var(--nord3); /* Dark text */
+$bolder-text-color: var(--nord0); /* Dark text */
+$highlight-text-color: var(--nord7); /* Highlighted text */
+
+/* Dark Mode Variables */
+//$bg-color: var(--nord0); /* Dark background */
+//$ui-color: var(--nord1); /* Darker UI */
+//$raised-ui-color: var(--nord2); /* Slightly raised UI */
+//$text-color: var(--nord4); /* Light text */
+//$secondary-text-color: var (--nord5); /* Light secondary text */
+//$highlight-text-color: var(--nord8); /* Highlighted text */
+
+// other colors
+$link-color: var(--nord7); /* Link color */
+$hover-color: var(--nord10); /* Hover effect color */
+
+$border-color: var(--nord3); /* Border color */
+$accent-color: var(--nord9); /* Accent color */
+$success-color: var(--nord14); /* Success */
+$warning-color: var(--nord13); /* Warning */
+$error-color: var(--nord11); /* Error */
+
+
+/* ------------------------------------- */
+/*           Font Variables              */
+/* ------------------------------------- */
+
+$font-title: 'Century Gothic', sans-serif; /* Font for titles and subtitles */
+$font-body: 'T Serif', serif; /* Font for body text */
+
+$font-size-body: 20px;
+$font-size-subtext: 20px;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+
+/* ------------------------------------- */
+/*          General Styles               */
+/* ------------------------------------- */
+
+body {
+    background-color: $bg-color;
+    color: $main-text-color;
+    font-family: $font-body; /* Applied body text font */
+    font-size: $font-size-body; /* Set base font size */
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: $hover-color;
+}
+
+h1 {
+    font-family: $font-title; /* Applied title and subtitle font */
+    color: $bolder-text-color;
+    font-size: $font-size-h1; /* Font size for h1 */
+    text-align: center; /* Center the text */
+    margin: 0 0 1rem;
+}
+
+h2 {
+    font-family: $font-title;
+    color: $bolder-text-color;
+    font-size: $font-size-h2; /* Font size for h2 */
+    margin: 0 0 1rem;
+}
+
+h3 {
+    font-family: $font-title;
+    color: $bolder-text-color;
+    font-size: $font-size-h3; /* Font size for h3 */
+    margin: 0 0 1rem;
+}
+
+
+/* ------------------------------------- */
+/*           Navbar Styles               */
+/* ------------------------------------- */
+
+.header {
+    background-color: $ui-color;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-family: $font-title;
+    font-size: $font-size-h1;
+    color: $bolder-text-color;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: $bolder-text-color;
+    margin-right: 1.5rem;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: $font-size-h3;
+}
+
+.nav-link:hover {
+    color: $highlight-text-color;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.nav-icon {
+    display: inline-block;
+}
+
+/* ------------------------------------- */
+/*          Buttons                      */
+/* ------------------------------------- */
+
+button {
+    background-color: $accent-color;
+    color: $main-text-color;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: $font-body; /* Applied body font to buttons */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: $hover-color;
+}
+
+/* ------------------------------------- */
+/*          Footer Styles                */
+/* ------------------------------------- */
+
+.footer {
+    background-color: $ui-color;
+    color: $main-text-color;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid $border-color;
+    font-size: 0.9rem;
+    font-family: $font-body; /* Applied body font to footer */
+}
+
+.footer a {
+    color: $link-color;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: $highlight-text-color;
+}
+
+/* ------------------------------------- */
+/*          Code Block Styles            */
+/* ------------------------------------- */
+
+pre, code {
+    background-color: $raised-ui-color;
+    color: $bolder-text-color;
+    padding: 0.5rem; /* Reduced padding */
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+    line-height: 1.5; /* Adjusted line height for better readability */
+    max-width: 100%; /* Prevents the block from overflowing */
+    margin-bottom: 1rem; /* Adds spacing to avoid overlapping with other text */
+}
+
+code {
+    color: $accent-color;
+    font-size: 0.9rem;
+}
+
+/* ------------------------------------- */
+/*          Miscellaneous                */
+/* ------------------------------------- */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
