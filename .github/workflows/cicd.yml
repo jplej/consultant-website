@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Bundler 2
         run: |
-          gem install bundler:2.3.0  # Ensure Bundler version 2.x or higher is installed
+          gem install bundler:2.3.0 
           bundle install
 
       - name: Build & Deploy to GitHub Pages
