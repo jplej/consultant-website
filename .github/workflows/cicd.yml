@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Set up Ruby for Jekyll
+      # Step 2: Set up Ruby for jekyll
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
