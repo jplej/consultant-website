@@ -38,6 +38,7 @@ jobs:
           git checkout --orphan publish
           git rm -rf .
           cp -r _site/* .
+          rm -rf _site || true
           git add .
           git commit -m "Deploy site to 'publish' branch"
           # Configure the token for authentication
