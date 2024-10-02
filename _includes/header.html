@@ -1,6 +1,5 @@
 <header class="header">
   <div class="wrapper">
-    {%- assign sorted_pages = site.pages | sort: "weight" -%}
     
     <!-- Site Title -->
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.data.l10n.title | escape }}</a>
@@ -16,6 +15,7 @@
     </label>
 
     <!-- Navigation Menu -->
+    {%- assign sorted_pages = site.pages | sort: "weight" -%}
     <nav class="nav-list">
       {%- for my_page in sorted_pages -%}
         {%- if my_page.title and my_page.weight -%}
@@ -23,5 +23,7 @@
         {%- endif -%}
       {%- endfor -%}
     </nav>
+
+
   </div>
 </header>
