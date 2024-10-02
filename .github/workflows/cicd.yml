@@ -1,0 +1,21 @@
+name: 'Automatic build'
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .gitignore
+
+jobs: 
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build & Deploy to GitHub Pages
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically provides this token
+          GITHUB_REPOSITORY: ${{ github.repository }}  # Your repo name will be fetched automatically
+          GITHUB_ACTOR: ${{ github.actor }}  # The GitHub user triggering the action
+          JEKYLL_ENV: production
+        uses: BryanSchuetz/jekyll-deploy-gh-pages@master
