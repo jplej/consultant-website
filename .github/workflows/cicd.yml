@@ -40,6 +40,8 @@ jobs:
           cp -r _site/* .
           git add .
           git commit -m "Deploy site to 'publish' branch"
+          # Configure the token for authentication
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git push --force origin publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
