@@ -29,13 +29,20 @@
 /* Light Mode Variables */
 
 $bg-color: var(--nord6); /* Light background */
-$ui-color: var(--nord3); /* UI Background */
+
+$ui-color: var(--nord1); /* UI Background */
+$ui-color-highlight: var(--nord3);
+
 $raised-ui-color: var(--nord4); /* Raised elements */
 
-$main-text-color: var(--nord3); /* Dark text */
-$main-text-color: var(--nord3); /* Dark text */
+$main-text-color: var(--nord1); /* Dark text */
 $bolder-text-color: var(--nord0); /* Dark text */
-$highlight-text-color: var(--nord7); /* Highlighted text */
+
+$light-text-color: var(--nord6); /* light text */
+$lightless-text-color: var(--nord4); /* light text */
+
+$highlight-text-color: var(--nord10); /* Highlighted text */
+$secondary-highlight-text-color: var(--nord7);
 
 /* Dark Mode Variables */
 //$bg-color: var(--nord0); /* Dark background */
@@ -64,7 +71,7 @@ $font-title: 'Century Gothic', sans-serif; /* Font for titles and subtitles */
 $font-body: 'T Serif', serif; /* Font for body text */
 
 $font-size-body: 20px;
-$font-size-subtext: 20px;
+$font-size-subtext: 16px;
 $font-size-h1: 2.5rem;
 $font-size-h2: 2rem;
 $font-size-h3: 1.75rem;
@@ -115,11 +122,14 @@ h3 {
 }
 
 
+
+
 /* ------------------------------------- */
 /*           Navbar Styles               */
 /* ------------------------------------- */
 
-.header {
+/* Wrapper for the entire header content */
+.nav-wrapper {
     background-color: $ui-color;
     padding: 1rem 2rem;
     border-bottom: 2px solid $border-color;
@@ -127,40 +137,126 @@ h3 {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky !important;
+    top: 0;
+    z-index: 10;
 }
 
-.header-title {
+/* Site branding (logo or title) */
+.site-branding {
+    flex: 1;
+}
+
+/* Site title styles */
+.site-title {
     font-family: $font-title;
-    font-size: $font-size-h1;
-    color: $bolder-text-color;
-}
-
-.header-nav {
-    display: flex;
-    align-items: center;
-}
-
-.nav-link {
-    color: $bolder-text-color;
-    margin-right: 1.5rem;
-    padding: 0.5rem 1rem;
+    font-size: $font-size-h2;
+    font-weight: 700;
+    color: $highlight-text-color !important;
     text-transform: uppercase;
-    font-family: $font-title;
-    font-weight: bold;
-    font-size: $font-size-h3;
+    letter-spacing: 4px;
+    text-decoration: none;
 }
 
-.nav-link:hover {
-    color: $highlight-text-color;
+.site-title:hover {
+    color: $secondary-highlight-text-color !important;
+    text-decoration: none
+}
+
+/* Hamburger menu toggle for mobile */
+.nav-toggle {
+    display: none; /* Hidden on desktop */
 }
 
 .menu-toggle {
     display: none;
 }
 
+/* Menu icon for the hamburger button */
 .nav-icon {
     display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem;
 }
+
+.nav-icon svg {
+    fill: $bolder-text-color;
+    width: 24px;
+    height: 24px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    flex: 2;
+}
+
+/* Navigation List Styles */
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem; /* Adds space between links */
+    padding: 0;
+    margin: 0;
+}
+
+/* Navigation List Item */
+.nav-item {
+    display: inline-block;
+}
+
+.page-link {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: $font-size-h3;
+    color: $light-text-color  !important;
+    text-decoration: none; /* Remove the underline */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Hover effect for page links */
+.page-link:hover {
+    color: $highlight-text-color;
+    background-color: $ui-color-highlight;
+    text-decoration: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    .nav-menu {
+        display: none; /* Hide nav links on mobile */
+    }
+
+    /* When checkbox is checked, show the menu */
+    .menu-toggle:checked ~ .nav-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $ui-color;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-list {
+        flex-direction: column; /* Stack nav items vertically */
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .page-link {
+        display: block;
+        width: 100%;
+    }
+}
+
 
 /* ------------------------------------- */
 /*          Buttons                      */
@@ -182,27 +278,107 @@ button:hover {
 }
 
 /* ------------------------------------- */
-/*          Footer Styles                */
+/*           Footer Styles               */
 /* ------------------------------------- */
-
-.footer {
+/* Footer Section */
+.site-footer {
+    //padding: 1rem 0; /* Adjust padding to reduce vertical space */
+    padding: 2rem;
     background-color: $ui-color;
-    color: $main-text-color;
-    text-align: center;
-    padding: 1.5rem 0;
-    border-top: 1px solid $border-color;
-    font-size: 0.9rem;
-    font-family: $font-body; /* Applied body font to footer */
+    color: $light-text-color !important;
+    width: 100%; /* Ensure footer spans the full width of the screen */
+    text-align: center; /* Ensure the entire footer is centered */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.footer a {
-    color: $link-color;
-    text-decoration: underline;
+/* Inner Wrapper to limit content width */
+.footer-wrapper {
+    max-width: 1200px; /* Limit the max width of the inner content */
+    margin: 0 auto; /* Center the footer content */
+    display: flex;
+    flex-direction: column; /* Ensure the copyright and columns are stacked */
+    align-items: center; /* Center everything horizontally */
+}
+/* Footer Columns - Center the columns within the footer */
+.footer-columns {
+    display: flex;
+    justify-content: space-evenly; /* Center the columns evenly */
+    //gap: 1rem; /* Add space between the columns */
+    width: 100%;
+    //border: 1px solid $light-text-color
 }
 
-.footer a:hover {
+/* Individual Footer Column */
+.footer-col {
+    flex-grow: 1; /* Ensure columns take equal space */
+    max-width: 250px; /* Limit the column width */
+    text-align: left; /* Keep content left-aligned */
+    margin: 0 auto;
+    //border: 1px solid $light-text-color
+}
+
+/* Footer Titles */
+.footer-col h3 {
+    font-family: $font-title;
+    font-size: $font-size-h3;
+    color: $lightless-text-color;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style-type: none;
+    //padding-left: 0;
+    //margin: 0;
+    text-align: left; /* Keep the list content aligned to the left */
+}
+
+/* Footer Links Styling */
+.footer-links a {
+    //padding: 0;
+    font-family: $font-title;
+    font-size: $font-size-subtext;
+    color: $light-text-color !important;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
     color: $highlight-text-color;
+    background-color: $ui-color-highlight;
 }
+
+/* Ensure footer columns align properly */
+.footer-col {
+    text-align: left; /* Ensure the whole column aligns left */
+    margin: 0;
+    padding: 0; /* Ensure no extra padding inside columns */
+}
+
+
+/* Responsive: Stack footer columns on mobile */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Footer Copyright - Center Align */
+.footer-copyright {
+    text-align: center;
+    //margin-top: 2rem;
+    font-size: $font-size-subtext;
+    font-family: $font-title;
+    color: $ui-color-highlight;
+    width: 100%; /* Ensure the copyright takes up the full width */
+    //border: 1px solid $light-text-color
+}
+
 
 /* ------------------------------------- */
 /*          Code Block Styles            */
@@ -223,6 +399,53 @@ pre, code {
 code {
     color: $accent-color;
     font-size: 0.9rem;
+}
+
+/* ------------------------------------- */
+/*          Logos Formatting             */
+/* ------------------------------------- */
+
+.logo-container {
+    display: flex; /* Align images horizontally */
+    justify-content: space-around; /* Add space between the logos */
+    align-items: center; /* Vertically center the logos */
+    flex-wrap: wrap; /* Wrap logos on smaller screens */
+    gap: 1rem; /* Add space between images */
+}
+
+.logo-container img {
+    max-width: 100px; /* Adjust size of the logos */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* ------------------------------------- */
+/*          Button Formatting            */
+/* ------------------------------------- */
+
+.link-button .btn {
+    display: flex; /* Makes the link behave like a button */
+    justify-content: center;
+    width: 250px;
+    margin: 0 auto;
+    padding: 10px 20px; /* Add some padding to make it look like a button */
+    background-color: $highlight-text-color; /* Background from UI variable */
+    color: $light-text-color; /* Use light text color */
+    text-align: center; /* Center the text */
+    font-family: $font-title; /* Button font */
+    font-weight: bold;
+    font-size: $font-size-h3; /* Adjust font size */
+    text-decoration: none; /* Remove underline from link */
+    
+    border-radius: 5px; /* Rounded corners */
+    //border: 2px solid $border-color; /* Add a border using border-color variable */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover state for the button */
+.link-button .btn:hover {
+    background-color: $secondary-highlight-text-color; 
+    color: $light-text-color; /* Use light text color */
+    border-color: $hover-color; /* Change border color on hover */
 }
 
 /* ------------------------------------- */

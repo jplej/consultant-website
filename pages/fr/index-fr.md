@@ -12,6 +12,10 @@ Je me spécialise dans le conseil aux entreprises souhaitant optimiser leurs op�
 
 ## À propos de moi
 
+![image]({{ site.baseurl }}/assets/logos/cdpq.png)
+
+
+
 Je détiens un master en finance, la charte CFA, et une vaste expérience dans les institutions financières et startups, fournissant des insights basés sur les données et des solutions commerciales concrètes.
 
 ## Services

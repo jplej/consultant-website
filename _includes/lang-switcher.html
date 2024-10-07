@@ -1,14 +1,11 @@
-{% for lang in site.languages %}
-    {% assign lang_name = site.data[lang].l10n.lang_name %}
-    {% if lang == site.active_lang %}
-        {{ lang_name }}
-    {% else %}
+<ul class="lang-list">
+    {% for lang in site.languages %}
+      <li>
         {% if lang == site.default_lang %}
-            <!-- For default language, use the current page's relative URL -->
-            <a href="{{ site.baseurl }}{{ page.url | relative_url }}">{{ lang_name }}</a>
+          <a href=" {{ site.baseurl }}{{ page.url }}">{{ lang }}</a>
         {% else %}
-            <!-- For other languages, insert the language code after the baseurl -->
-            <a href="{{ site.baseurl }}/{{ lang }}{{ page.url }}">{{ lang_name }}</a>
+          <a href=" {{ site.baseurl }}/{{ lang }}{{ page.url }}">{{ lang }}</a>
         {% endif %}
-    {% endif %}
-{% endfor %}
+      </li>
+    {% endfor %}
+  </ul>

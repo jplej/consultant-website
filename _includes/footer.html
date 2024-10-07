@@ -1,41 +1,54 @@
-<footer class="site-footer h-card">
-    <data class="u-url" href="{{ "/" | relative_url }}"></data>
-  
-    <div class="wrapper">
-  
-      <div class="footer-col-wrapper">
-        <div class="footer-col">
-          <p class="feed-subscribe">
-            <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
-              <svg class="svg-icon orange">
-                <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-              </svg><span>Subscribe</span>
-            </a>
-          </p>
-        {%- if site.author %}
-          <ul class="contact-list">
-            {% if site.author.name -%}
-              <li class="p-name">{{ site.author.name | escape }}</li>
-            {% endif -%}
-            {% if site.author.email -%}
-              <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-            {%- endif %}
-          </ul>
-        {%- endif %}
-        </div>
-        <div class="footer-col">
-          <p>{{ site.description | escape }}</p>
-        </div>
-      </div>
-  
-      <div class="social-links">
-        {%- include social.html -%}
+<footer class="site-footer">
+  <div class="footer-wrapper">
+
+    <div class="footer-columns">
+      
+      <!-- first column, languages -->
+      <div class="footer-col">
+        <ul class="footer-links">
+          {% for lang in site.languages %}
+            <li>
+              {% if lang == site.default_lang %}
+                <a href=" {{ site.baseurl }}{{ page.url }}">English</a>
+              {% else %}
+                <a href=" {{ site.baseurl }}/{{ lang }}{{ page.url }}">Français</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
 
-      <div class="lang-switcher">
-        {%- include lang-switcher.html -%}
+      <div class="footer-col">
+        <ul class="footer-links">
+          <li><a href="https://calendar.example.com" target="_blank">Calendar</a></li>
+          <li><a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:your-email@example.com">Email</a></li>
+        </ul>
       </div>
-  
+
+      <div class="footer-col">
+        <nav class="footer-nav-menu">
+          <ul class="footer-links">
+            {%- assign sorted_pages = site.pages | sort: "weight" -%}
+            {%- for my_page in sorted_pages -%}
+              {%- if my_page.title and my_page.weight -%}
+                <li>
+                  <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </nav>
+      </div>
+
     </div>
-  
-  </footer>
+
+    <div class="footer-copyright">
+      <p>Jean-Philippe Lejeune © 2024</p>
+    </div>
+
+  </div>
+
+
+
+</footer>
