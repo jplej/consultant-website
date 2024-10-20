@@ -480,3 +480,16 @@ code {
 .mb-2 {
     margin-bottom: 2rem;
 }
+
+/* ------------------------------------- */
+/*          Miscellaneous                */
+/* ------------------------------------- */
+
+.centered-image {
+    width: 400px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
