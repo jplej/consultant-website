@@ -405,17 +405,28 @@ code {
 /*          Logos Formatting             */
 /* ------------------------------------- */
 
-.logo-container {
-    display: flex; /* Align images horizontally */
-    justify-content: space-around; /* Add space between the logos */
-    align-items: center; /* Vertically center the logos */
-    flex-wrap: wrap; /* Wrap logos on smaller screens */
-    gap: 1rem; /* Add space between images */
+/* Styling for the Heading */
+.logo-heading {
+    font-size: $font-size-body;
+    font-family: $font-title;
+    margin-bottom: 1rem; /* Space between the text and logos */
+    text-align: center;
+    font-style: italic;
 }
 
+/* Logo Container Styling */
+.logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Logo Image Styling */
 .logo-container img {
-    max-width: 100px; /* Adjust size of the logos */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100px;
+    height: auto;
 }
 
 /* ------------------------------------- */

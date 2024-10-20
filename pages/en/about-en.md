@@ -8,12 +8,14 @@ weight: 4
 
 # About Me
 
-## My Mission
+# Hi, I’m Jean-Philippe Lejeune
+I’m a Data Solutions consultant who works with boutique investment firms who are tired of wasting time on manual processes and inefficiencies. <br>
+My expertise will help you achieve higher returns and streamlined decision-making — even if you think your approach is too complex to automate.
 
-I’m Jean-Philippe Lejeune, a consultant passionate about bridging the gap between finance and software development. My mission is to empower businesses to make data-driven decisions, combining my expertise in quantitative finance and technical solutions. Whether you're a startup seeking direction or an SME refining its strategy, I offer tailored solutions to help you grow and succeed.
+<br>
 
-## Experience & Background
+<div class="link-button">
+    <a href="https://cal.com/jplr8922/introcall" class="btn">About</a>
+</div>
 
-With a master's in finance and a CFA charter, I bring years of experience in finance, data analysis, and product management. I have worked with startups, SMEs, and major financial institutions, leading teams and delivering impactful results. 
-
-Let’s work together to turn your business challenges into strategic opportunities.
+<br>
