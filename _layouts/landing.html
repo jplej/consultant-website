@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {% assign current_lang = page.lang | default: site.active_lang %}
+        {% assign landing_blocks = site.landing_blocks | where: "lang", current_lang %}
+
+        {% if landing_blocks and landing_blocks.size > 0 %}
+          {% assign sorted_blocks = landing_blocks | sort: "weight" %}
+
+          {% for block in sorted_blocks %}
+            <div class="{{ block.css_class }} landing-block">
+              {{ block.content }}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No content available for this language.</p>
+        {% endif %}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

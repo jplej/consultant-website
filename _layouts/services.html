@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  {%- include head.html -%}
+
+  <body>
+    {%- include header.html -%}
+
+    <main class="page-content">
+      <div class="wrapper">
+
+        {% assign current_lang = page.lang | default: site.active_lang %}
+        {% assign service_blocks = site.service_blocks | where: "lang", current_lang %}
+        {% assign sorted_blocks = service_blocks | sort: 'weight' %}
+
+        {% for block in sorted_blocks %}
+          <div class="service-block">
+
+            <div class="service-block-content">
+              {{ block.content }}
+              <a href="https://cal.com/jplr8922/introcall" class="btn">Inquire</a>
+            </div>
+
+            <div class="block-image">
+              <img src="{{ block.image }}" alt="{{ block.title }}" />
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+  </body>
+</html>

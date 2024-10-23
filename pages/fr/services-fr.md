@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: services
 title: Services 
 permalink: /services/
 lang: fr

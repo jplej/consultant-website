@@ -136,7 +136,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     position: sticky !important;
     top: 0;
     z-index: 10;
@@ -257,6 +257,125 @@ h3 {
     }
 }
 
+/* ------------------------------------- */
+/*          landing_blocks               */
+/* ------------------------------------- */
+
+
+.landing-block {
+    width: 100vw;
+    padding: 120px 400px; /* Adjust as needed */
+    text-align: center;
+    border-radius: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.hero-block {
+    background-color: $ui-color;
+}
+
+.hero-block h1 {
+    font-family: $font-title;
+    font-size: $font-size-h1;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--nord6) !important;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+.logos-block {
+    background-color: $bg-color;
+}
+
+
+.logos-block h1 {
+    font-size: $font-size-h2;
+    font-family: $font-title;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-style: italic;
+}
+
+
+.cta-block {
+    background-color: $ui-color;
+}
+
+
+.cta-block h1 {
+    font-family: $font-title;
+    font-size: $font-size-h2;
+    color: var(--nord6) !important;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+
+.testimonials-block {
+    background-color: var(--nord6);
+}
+
+
+/* ------------------------------------- */
+/*          service blocks               */
+/* ------------------------------------- */
+
+.service-block {
+    border: 2px solid var(--nord3);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row; /* Adjusted to align content horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-block-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.service-block-content p {
+    margin: 0 0 10px 0;
+}
+
+.service-block h2 {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--nord10);
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--nord11);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--nord13);
+}
+
+.block-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 
 /* ------------------------------------- */
 /*          Buttons                      */
@@ -277,10 +396,12 @@ button:hover {
     background-color: $hover-color;
 }
 
+
+
 /* ------------------------------------- */
 /*           Footer Styles               */
 /* ------------------------------------- */
-/* Footer Section */
+
 .site-footer {
     //padding: 1rem 0; /* Adjust padding to reduce vertical space */
     padding: 2rem;
@@ -405,14 +526,6 @@ code {
 /*          Logos Formatting             */
 /* ------------------------------------- */
 
-/* Styling for the Heading */
-.logo-heading {
-    font-size: $font-size-body;
-    font-family: $font-title;
-    margin-bottom: 1rem; /* Space between the text and logos */
-    text-align: center;
-    font-style: italic;
-}
 
 /* Logo Container Styling */
 .logo-container {
@@ -480,6 +593,18 @@ code {
 .mb-2 {
     margin-bottom: 2rem;
 }
+
+
+main.page-content, .wrapper {
+    margin: 0; /* No gap at all */
+    padding: 0; /* No padding inside */
+    width: 100%; /* Ensure it spans the full width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+}
+
 
 /* ------------------------------------- */
 /*          Miscellaneous                */

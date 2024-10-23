@@ -13,6 +13,12 @@ exclude:
   - node_modules
   - vendor
 
+collections:
+  service_blocks:
+    output: false
+  landing_blocks:
+    output: false 
+
 # Build settings
 theme: minima
 plugins:
