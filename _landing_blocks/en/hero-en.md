@@ -4,7 +4,7 @@ css_class: "hero-block"
 weight: 1
 ---
 
-# We help strategic investors leverage data and innovative analytics to improve their returns
+# We help strategic investors leverage data and innovative analytics to improve their returns.
 
 <br>
 <br>

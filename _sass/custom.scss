@@ -28,12 +28,13 @@
 
 /* Light Mode Variables */
 
-$bg-color: var(--nord6); /* Light background */
+$bg-color: var(--nord4); /* Light background */
+$raised-bg-color: var(--nord6); /* Raised elements */
 
 $ui-color: var(--nord1); /* UI Background */
 $ui-color-highlight: var(--nord3);
 
-$raised-ui-color: var(--nord4); /* Raised elements */
+
 
 $main-text-color: var(--nord1); /* Dark text */
 $bolder-text-color: var(--nord0); /* Dark text */
@@ -325,13 +326,13 @@ h3 {
 /* ------------------------------------- */
 
 .service-block {
-    border: 2px solid var(--nord3);
+    background-color: $raised-bg-color;
+    width: 150%;
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;
     display: flex;
     flex-direction: row; /* Adjusted to align content horizontally */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .service-block-content {
@@ -344,36 +345,25 @@ h3 {
 
 .service-block-content p {
     margin: 0 0 10px 0;
+    font-family: $font-body;
+    font-size: $font-size-body
 }
 
-.service-block h2 {
-    font-family: 'Century Gothic', sans-serif;
-    font-size: 2rem;
+.service-block h1 {
+    font-family: $font-title;
+    font-size: $font-size-h2;
     margin-bottom: 10px;
-    color: var(--nord10);
-    text-align: center;
+    color: $ui-color;
+    text-align: left;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--nord11);
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
 
-.btn:hover {
-    background-color: var(--nord13);
-}
 
 .block-image img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 
@@ -381,20 +371,6 @@ h3 {
 /*          Buttons                      */
 /* ------------------------------------- */
 
-button {
-    background-color: $accent-color;
-    color: $main-text-color;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: $font-body; /* Applied body font to buttons */
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: $hover-color;
-}
 
 
 
@@ -506,7 +482,7 @@ button:hover {
 /* ------------------------------------- */
 
 pre, code {
-    background-color: $raised-ui-color;
+    background-color: $raised-bg-color;
     color: $bolder-text-color;
     padding: 0.5rem; /* Reduced padding */
     border-radius: 5px;
@@ -570,6 +546,31 @@ code {
     background-color: $secondary-highlight-text-color; 
     color: $light-text-color; /* Use light text color */
     border-color: $hover-color; /* Change border color on hover */
+}
+
+
+.link-button-service .btn {
+    display: flex;
+    justify-content: center;
+    width: 200px; /* Reduced width */
+    margin: 10px auto;
+    padding: 10px 0px; /* Slightly smaller padding */
+    background-color: $highlight-text-color;
+    color: $light-text-color;
+    text-align: center;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: $font-size-body; /* Adjusted font size */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state for the smaller button */
+.link-button-service .btn:hover {
+    background-color: $secondary-highlight-text-color;
+    color: $light-text-color;
+    border-color: $hover-color;
 }
 
 /* ------------------------------------- */
