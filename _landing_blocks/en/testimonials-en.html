@@ -1,0 +1,22 @@
+---
+lang: en
+css_class: "testimonials-block"
+weight: 3
+---
+
+{%- assign testimonials = site.data[page.lang].testimonials -%}
+<h2 class="text-center">{{testimonials.title}}</h2>
+
+<div class="testimonials_grid flex justify-center flex-wrap gap-5 ">
+  {%- for item in testimonials.items -%}
+    <div class="card p-5 border shadow-lg rounded-xl max-w-56 bg-white ">
+      <h3>{{item.name}}</h3>
+      <cite class="mb-5"><i class="fa fa-quote-left" aria-hidden="true"></i>
+        {{item.text}}<i class="fa fa-quote-right" aria-hidden="true"></i></cite>
+        <hr>
+      <p>{{item.description}}</p>
+    </div>
+  {%- endfor -%}
+
+</div>
+

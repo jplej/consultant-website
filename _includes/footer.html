@@ -1,15 +1,17 @@
-<footer class="site-footer">
+<footer class="site-footer bg-slate-100">
   <div class="footer-wrapper">
 
-    <div class="footer-columns">
+    <div class="footer-columns grid md:grid-cols-3 max-w-7xl mx-auto py-8">
       
       <!-- first column, languages -->
       <div class="footer-col">
-        <ul class="footer-links">
+        <ul class="footer-links text-center">
           {% for lang in site.languages %}
-            <li>
+            <li {% if page.lang == lang %}class="border border-slate-400"{% endif %}>
               {% if lang == site.default_lang %}
-                <a href=" {{ site.baseurl }}{{ page.url }}">English</a>
+                <a href=" {{ site.baseurl }}{{ page.url }}" >
+                  English
+                </a>
               {% else %}
                 <a href=" {{ site.baseurl }}/{{ lang }}{{ page.url }}">Français</a>
               {% endif %}
@@ -19,7 +21,7 @@
       </div>
 
       <div class="footer-col">
-        <ul class="footer-links">
+        <ul class="footer-links text-center">
           <li><a href="https://calendar.example.com" target="_blank">Calendar</a></li>
           <li><a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
           <li><a href="mailto:your-email@example.com">Email</a></li>
@@ -28,23 +30,23 @@
 
       <div class="footer-col">
         <nav class="footer-nav-menu">
-          <ul class="footer-links">
-            {%- assign sorted_pages = site.pages | sort: "weight" -%}
-            {%- for my_page in sorted_pages -%}
-              {%- if my_page.title and my_page.weight -%}
-                <li>
+          <ul class="footer-links text-center">
+            {% assign sorted_pages = site.pages | sort: "weight" %}
+            {% for my_page in sorted_pages %}
+              {% if my_page.title and my_page.weight %}
+                <li {% if page.title == my_page.title %}class="border border-slate-400"{% endif %}>
                   <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
                 </li>
-              {%- endif -%}
-            {%- endfor -%}
+              {% endif %}
+            {% endfor %}
           </ul>
         </nav>
       </div>
 
     </div>
 
-    <div class="footer-copyright">
-      <p>Jean-Philippe Lejeune © 2024</p>
+    <div class="footer-copyright text-center text-slate-200 bg-slate-800 py-8">
+      <p>Jean-Philippe Lejeune © {{site.time | date: "%Y"}}</p>
     </div>
 
   </div>
