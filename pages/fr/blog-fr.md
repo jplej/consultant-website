@@ -1,6 +1,9 @@
 ---
 layout: base
+group: blog
 title: Blogue
+page_heading: Nos articles de blog
+empty: à venir
 permalink: /blog/
 lang: fr
 weight: 3

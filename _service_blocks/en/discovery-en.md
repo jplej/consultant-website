@@ -1,6 +1,6 @@
 ---
-title: "Consultation Package"
 image: "/assets/images/whiteboard2.jpg"
+alt: "Consultation Package"
 lang: en
 weight: 1
 ---

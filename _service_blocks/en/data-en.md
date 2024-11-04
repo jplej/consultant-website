@@ -1,6 +1,6 @@
 ---
-title: "data-engineering"
 image: "/assets/images/data.jpg"
+alt: "data-engineering"
 lang: en
 weight: 2
 ---

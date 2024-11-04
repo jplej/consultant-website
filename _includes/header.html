@@ -9,12 +9,12 @@
 
     <!-- Navigation Menu -->   
     <nav class="nav-menu hidden my-8 md:my-0 md:block" id="nav">
-      <ul class="nav-list grid gap-4 text-center justify-center md:flex ">
+      <ul class="nav-list grid text-center justify-center md:flex ">
         {%- assign sorted_pages = site.pages | sort: "weight" -%}
         {%- for my_page in sorted_pages -%}
           {%- if my_page.title and my_page.weight -%}
             <li class="nav-item">
-              <a class="page-link hover:border hover:border-slate-400 {% if page.title == my_page.title  %} active shadow-lg border{% endif %} py-2 px-4 " href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              <a class="page-link hover:border hover:border-slate-400 {% if page.title == my_page.title or page.group == my_page.group  %} active shadow-lg border {% else %} border border-transparent{% endif %} py-2 px-4 " href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             </li>
           {%- endif -%}
         {%- endfor -%}

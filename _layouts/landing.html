@@ -3,4 +3,24 @@ layout: default
 ---
 {% include hero.html %}
 
-{{content}}
+<div class="w-full">
+  {% assign landing_blocks = site.landing_blocks %}
+
+  {% if landing_blocks and landing_blocks.size > 0 %}
+  {% assign sorted_blocks = landing_blocks | sort: "weight" %}
+
+  {% for block in sorted_blocks %}
+  <div class="{{ block.css_class }} landing-block py-12">
+    <div class="landing_inner max-w-7xl px-5 mx-auto">
+      {{ block.content }}
+    </div>
+  </div>
+  {% endfor %}
+  
+  {% include testimonials.html %}
+
+  {% else %}
+  <p>No content available for this language.</p>
+  {% endif %}
+</div>
+<div class="p-5 py-10 max-w-xl7 mx-auto">{{content}}</div>

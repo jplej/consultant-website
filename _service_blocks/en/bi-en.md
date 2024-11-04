@@ -1,6 +1,6 @@
 ---
-title: "bi"
 image: "/assets/images/dashboard.jpg"
+alt: "Business Intelligence"
 lang: en
 weight: 3
 ---

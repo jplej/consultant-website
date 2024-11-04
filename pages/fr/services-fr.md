@@ -1,6 +1,8 @@
 ---
 layout: services
+group: services
 title: Services 
+page_heading: Comment les petites entreprises peuvent-elles améliorer leurs performances?
 permalink: /services/
 lang: fr
 weight: 2

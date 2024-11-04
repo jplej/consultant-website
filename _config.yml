@@ -6,12 +6,14 @@ baseurl: #"/consultant-website" # The subpath for your project
 url: "https://jplej.github.io" # Your GitHub Pages user site URL
 twitter_username: jekyllrb
 github_username:  jekyll
-
+permalink: pretty
 collections:
   service_blocks:
     output: false
   landing_blocks:
     output: false 
+  # posts:
+   # permalink: /blog/:slug/
 
 # Build settings
 #theme: minima
