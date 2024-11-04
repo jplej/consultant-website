@@ -1,7 +1,9 @@
 ---
 layout: base
 ---
-<article class="post h-entry max-w-6xl mx-auto my-10" itemscope itemtype="http://schema.org/BlogPosting">
+{% assign posts = site.posts | where: "lang", page.lang %}
+
+<article class="post markdown w-[96%] max-w-7xl mx-auto min-h-[70vh] py-10 bg-white" itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -26,10 +28,11 @@ layout: base
       {%- endif -%}</p>
   </header>
   
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="gap-12 md:flex">
+    <div class="content md:w-3/4 p-3" itemprop="articleBody">
     {%- if page.image -%}
-    <div class="image_outer mb-6 w-fit shadow-md">
-      <img src="{{page.image}}" alt="page{{page.title}}" >
+    <div class="image_outer mb-8 w-full shadow-md">
+      <img src="{{page.image}}" alt="page{{page.title}}" class="w-full">
     </div>
     {%- endif -%}
     {{ content }}
