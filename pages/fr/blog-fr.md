@@ -1,21 +1,13 @@
 ---
-layout: base
+layout: blog
+group: blog
 title: Blogue
+description: Ici, vous trouverez les dernières perspectives, stratégies et conseils de notre équipe de consultants.
+page_heading: Nos articles de blog
+empty: à venir
+resent: Articles récents
+limit: 2
 permalink: /blog/
 lang: fr
 weight: 3
 ---
-
-# Blogue
-
-Ici, vous trouverez les dernières perspectives, stratégies et conseils de notre équipe de consultants.
-
-<ul>
-  {% assign filtered_posts = site.posts | where: "lang", page.lang %}
-  {% for post in filtered_posts %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span>{{ post.date | date: "%b %d, %Y" }}</span>
-      </li>
-  {% endfor %}
-</ul>

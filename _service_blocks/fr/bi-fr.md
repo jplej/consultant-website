@@ -1,10 +1,10 @@
 ---
 title: "bi"
-image: "/consultant-website/assets/images/jplej_corpo.bmp"
+image: "/assets/images/dashboard.jpg"
 lang: fr
 weight: 3
 ---
 
-# Business Intelligence
+# Intelligence d'affaires
 
-We build data platforms that combine advanced analytics with custom internal applications to unlock the full potential of your data. Our solutions enhance decision-making through real-time insights, streamlined operations, and automated workflows. With a focus on scalability, compliance, and security, we provide powerful dashboards to monitor key metrics and optimize processes, ensuring sustainable growth and improved performance across your organization.
+Nous créons des plateformes de données qui combinent des analyses avancées avec des applications internes personnalisées pour exploiter tout le potentiel de vos données. Nos solutions améliorent la prise de décision grâce à des informations en temps réel, des opérations rationalisées et des flux de travail automatisés. En mettant l'accent sur l'évolutivité, la conformité et la sécurité, nous fournissons des tableaux de bord puissants pour surveiller les indicateurs clés et optimiser les processus, garantissant ainsi une croissance durable et des performances améliorées dans toute votre organisation.

@@ -21,7 +21,6 @@
     --nord15: #B48EAD; /* Aurora - Purple */
   }
   
-
 /* ------------------------------------- */
 /*          Light & Dark Mode Setup      */
 /* ------------------------------------- */
@@ -33,8 +32,6 @@ $raised-bg-color: var(--nord6); /* Raised elements */
 
 $ui-color: var(--nord1); /* UI Background */
 $ui-color-highlight: var(--nord3);
-
-
 
 $main-text-color: var(--nord1); /* Dark text */
 $bolder-text-color: var(--nord0); /* Dark text */
@@ -62,7 +59,6 @@ $accent-color: var(--nord9); /* Accent color */
 $success-color: var(--nord14); /* Success */
 $warning-color: var(--nord13); /* Warning */
 $error-color: var(--nord11); /* Error */
-
 
 /* ------------------------------------- */
 /*           Font Variables              */
@@ -125,24 +121,6 @@ h3 {
 }
 
 /* ------------------------------------- */
-/*          Blog and posts               */
-/* ------------------------------------- */
-
-.post-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.post-list li {
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-
-
-/* ------------------------------------- */
 /*           Navbar Styles               */
 /* ------------------------------------- */
 
@@ -172,7 +150,7 @@ h3 {
     font-weight: 700;
     color: $highlight-text-color !important;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     text-decoration: none;
 }
 
@@ -279,7 +257,6 @@ h3 {
 /*          landing_blocks               */
 /* ------------------------------------- */
 
-
 .landing-block {
     width: 100vw;
     padding: 120px 400px; /* Adjust as needed */
@@ -288,7 +265,6 @@ h3 {
     margin: 0;
     box-sizing: border-box;
 }
-
 
 .hero-block {
     background-color: $ui-color;
@@ -311,7 +287,6 @@ h3 {
     background-color: $bg-color;
 }
 
-
 .logos-block h1 {
     font-size: $font-size-h2;
     font-family: $font-title;
@@ -320,11 +295,9 @@ h3 {
     font-style: italic;
 }
 
-
 .cta-block {
     background-color: $ui-color;
 }
-
 
 .cta-block h1 {
     font-family: $font-title;
@@ -334,11 +307,9 @@ h3 {
     text-decoration: none;
 }
 
-
 .testimonials-block {
     background-color: var(--nord6);
 }
-
 
 /* ------------------------------------- */
 /*          service blocks               */
@@ -376,8 +347,6 @@ h3 {
     text-align: left;
 }
 
-
-
 .block-image img {
     width: 200px;
     height: 200px;
@@ -385,13 +354,9 @@ h3 {
     border-radius: 5px;
 }
 
-
 /* ------------------------------------- */
 /*          Buttons                      */
 /* ------------------------------------- */
-
-
-
 
 /* ------------------------------------- */
 /*           Footer Styles               */
@@ -415,6 +380,7 @@ h3 {
     flex-direction: column; /* Ensure the copyright and columns are stacked */
     align-items: center; /* Center everything horizontally */
 }
+
 /* Footer Columns - Center the columns within the footer */
 .footer-columns {
     display: flex;
@@ -471,7 +437,6 @@ h3 {
     padding: 0; /* Ensure no extra padding inside columns */
 }
 
-
 /* Responsive: Stack footer columns on mobile */
 @media (max-width: 768px) {
     .footer-columns {
@@ -494,8 +459,6 @@ h3 {
     width: 100%; /* Ensure the copyright takes up the full width */
     //border: 1px solid $light-text-color
 }
-
-
 
 /* ------------------------------------- */
 /*          Code Block Styles            */
@@ -521,7 +484,6 @@ code {
 /* ------------------------------------- */
 /*          Logos Formatting             */
 /* ------------------------------------- */
-
 
 /* Logo Container Styling */
 .logo-container {
@@ -567,7 +529,6 @@ code {
     color: $light-text-color; /* Use light text color */
     border-color: $hover-color; /* Change border color on hover */
 }
-
 
 .link-button-service .btn {
     display: flex;
@@ -615,7 +576,6 @@ code {
     margin-bottom: 2rem;
 }
 
-
 main.page-content, .wrapper {
     margin: 0; /* No gap at all */
     padding: 0; /* No padding inside */
@@ -626,7 +586,6 @@ main.page-content, .wrapper {
     box-sizing: border-box; /* Ensure padding doesn’t affect width */
     text-align: left;
 }
-
 
 /* ------------------------------------- */
 /*          Miscellaneous                */

@@ -1,0 +1,15 @@
+---
+lang: en
+css_class: "logos-block"
+weight: 2
+---
+
+<h2 class="text-center">{{site.data.l10n.logos_title}}</h2>
+
+<div class="logo-section">
+  <div class="logo_container w-full flex gap-8 flex-wrap justify-center items-center">
+    {%- for logo in site.data.logos -%}
+        <img src="{{site.baseurl}}{{logo}}" alt="Logo {{forloop.index}}" class="logo_image w-[150px]">
+    {%- endfor -%}
+  </div>
+</div>

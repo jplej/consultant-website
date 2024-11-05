@@ -1,0 +1,67 @@
+{%- assign lang = site.lang -%}
+{%- assign data = site.data[lang].navigation -%}
+<header class="page_header">
+  <div class="container">
+    <nav>
+      <a href="/" class="site_logo">
+        <img src="{{site.baseurl}}{{site.logo}}" alt="logo" class="logo w-20 h-auto">
+      </a>
+      <div class="toggler" id="menuToggler" onclick="toggleMenu()">
+        <div class="hamburger_outer">
+          <div class="hamburger item">
+            <span></span>
+          </div>
+        </div>
+        <div class="times item active-burger"></div>
+      </div>
+      <div class="hidden_small" id="nav">
+        <ul class="nav_list">
+          {% for li in data.nav -%}
+          <li class="nav_item{% if li.children %} dropdown{% endif %} {% if page.page_id == li.page_id %} active{% endif %}">
+            {%- if li.link -%}
+            <a href="{{li.link}}" class="item_link">{{li.name}}</a>
+            {%- else -%}
+            <button class="item_link" {% if {{li.action}} %}
+            onclick="{{li.action}}"{% endif %}>{{li.name}}</button>
+            {%- endif -%}
+            {%- if li.children -%}
+            <ul class="nav_list_child">
+              {%- for lc in li.children -%}
+              <li class="nav_item_child">
+                {%- if lc.link -%}
+                <a href="{{lc.link}}" class="item_link">{{lc.name}}</a>
+                {%- else -%}
+                <button class="item_link" onclick="{{lc.action}}">{{lc.name}}</button>
+                {%- endif -%}
+              </li>
+              {%- endfor -%}
+            </ul>
+            {%- endif -%}
+          </li>
+          {% endfor -%}
+        </ul>
+        <div class="nav_buttons">
+        {%- for lang in site.languages -%}
+          {%- if site.lang == lang -%}
+            <span class="tooltip">{{lang}}</span>
+          {%- else -%}
+          <a href="{%- if lang != site.default_lang -%}/{{lang}}{%- endif -%}{{page.url | replace: ".html"}}" data-title="{{lang}}" class="tooltip lang_switch">{{lang}}</a>
+          {%- endif -%}
+        {%- endfor -%}
+        </div>
+      </div>
+
+    </nav>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.querySelectorAll("#menuToggler .item");
+  function toggleMenu() {
+    document.getElementById("nav").classList.toggle("hidden_small");
+    for (el of hamburger) {
+      el.classList.toggle("active-burger");
+    }
+  }
+  
+</script>

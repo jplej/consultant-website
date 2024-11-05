@@ -2,33 +2,35 @@
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Consulting website for jplejeune
-baseurl: "/consultant-website" # The subpath for your project
-url: "https://jplej.github.io" # Your GitHub Pages user site URL
+# baseurl: "/consultant-website" # The subpath for your project
+# url: "https://jplej.github.io" # Your GitHub Pages user site URL
 twitter_username: jekyllrb
 github_username:  jekyll
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-
+permalink: pretty
 collections:
   service_blocks:
     output: false
   landing_blocks:
     output: false 
+  # posts:
+   # permalink: /blog/:slug/
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-polyglot
-  
+  - jekyll-seo-tag
+  - jekyll-tailwindcss
+#  - jekyll-postcss
+
+postcss:
+  cache: false
+
 
 languages: ["en", "fr"]
 default_lang: "en"
-exclude_from_localization: ["assets"]
+exclude_from_localization: [assets, command.sh]
 parallel_localization: true
 
 sass:
@@ -41,14 +43,14 @@ sass:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - command.sh
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/
