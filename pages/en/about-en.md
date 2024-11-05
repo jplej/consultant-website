@@ -9,7 +9,7 @@ weight: 4
 image: /assets/images/jplej_corpo.webp
 ---
 
-<img src="{{ site.baseurl }}/assets/images/jplej_corpo.bmp" 
+<img src="{{site.baseurl}}{{ site.baseurl }}/assets/images/jplej_corpo.bmp" 
      alt="jplej_corpo" class="mx-auto my-5 md:float-left md:max-h-[50vh] md:mr-10 shadow-lg rounded-lg shadow-slate-400">
      
 # About Us 

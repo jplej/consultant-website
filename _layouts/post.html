@@ -32,7 +32,7 @@ layout: base
     <div class="content md:w-3/4 p-3" itemprop="articleBody">
     {%- if page.image -%}
     <div class="image_outer mb-8 w-full shadow-md">
-      <img src="{{page.image}}" alt="page{{page.title}}" class="w-full">
+      <img src="{{site.baseurl}}{{page.image}}" alt="page{{page.title}}" class="w-full">
     </div>
     {%- endif -%}
     {{ content }}
