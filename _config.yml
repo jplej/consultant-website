@@ -4,6 +4,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Consulting website for jplejeune
 # baseurl: "/consultant-website" # The subpath for your project
 # url: "https://jplej.github.io" # Your GitHub Pages user site URL
+# this is just for a test
 twitter_username: jekyllrb
 github_username:  jekyll
 permalink: pretty
