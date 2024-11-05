@@ -32,7 +32,7 @@ module.exports = {
         // Text Colors on Dark Backgrounds
         textOnDark: {
           primary: '#ECEFF4',  // `nord6`
-          secondary: '#E5E9F0', // `nord5`
+          secondary: '#d8dee9', // `nord5`
         },
 
         // Text Colors on Light Backgrounds
@@ -50,6 +50,21 @@ module.exports = {
           success: '#A3BE8C',      // `nord14` (green)
           url: '#b48ead' // `nord15' (purple)
         },
+      },
+
+      // Font Families
+      fontFamily: {
+        // Body text
+        body: ['Roboto', 'Open Sans', 'sans-serif'],
+
+        // Headings
+        heading: ['Georgia', 'Playfair Display', 'Montserrat', 'Helvetica', 'serif'],
+
+        // Buttons & Navigation
+        button: ['Arial', 'Lato', 'sans-serif'],
+
+        // Code or Technical Text
+        code: ['Inconsolata', 'Courier New', 'monospace'],
       },
     },
   },

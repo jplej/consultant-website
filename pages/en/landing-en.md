@@ -2,7 +2,7 @@
 layout: landing
 group: home
 title: Home
-page_heading: We help strategic investors leverage data and innovative analytics to improve their returns
+page_heading: We help finance professionals leverage big data solutions to increase their bottom line
 image: /assets/images/consulting-1920.jpg
 permalink: "/"
 lang: en

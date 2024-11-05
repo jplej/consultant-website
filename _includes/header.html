@@ -2,8 +2,8 @@
   <div class="nav_wrapper md:flex gap-5 items-center justify-between max-w-7xl mx-auto">
     
     <!-- Site Branding (Title or Logo) -->
-    <div class="site-branding py-1 px-4 w-fit hover:border hover:border-slate-400 hover:shadow-lg">
-      <a class="site-title font-bold uppercase text-lg" rel="author" href="{{ "/" | relative_url }}">{{ site.data.l10n.title | escape }}</a>
+    <div class="site-branding py-1 px-4 w-fit">
+      <a class="site-title font-bold uppercase text-lg text-accent-main hover:text-accent-highlight transition-colors duration-300" rel="author" href="{{ "/" | relative_url }}">{{ site.data.l10n.title | escape }}</a>
     </div>
 
 
@@ -14,7 +14,11 @@
         {%- for my_page in sorted_pages -%}
           {%- if my_page.title and my_page.weight -%}
             <li class="nav-item">
+              <a class="page-link font-heading text-lg hover:bg-BgDark-secondary {% if page.title == my_page.title or page.group == my_page.group  %} active bg-BgDark-secondary {% else %} border border-transparent{% endif %} py-2 px-3" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              <!--
+              <a class="page-link py-2 px-3 {% if page.title == my_page.title or page.group == my_page.group %} bg-BgDark-secondary text-white {% else %} hover:bg-BgDark-secondary hover:text-white {% endif %}" href="{{ my_page.url | relative_url }}"></a>
               <a class="page-link hover:border hover:border-slate-400 {% if page.title == my_page.title or page.group == my_page.group  %} active shadow-lg border {% else %} border border-transparent{% endif %} py-2 px-3" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              -->
             </li>
           {%- endif -%}
         {%- endfor -%}
