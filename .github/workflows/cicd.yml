@@ -28,7 +28,7 @@ jobs:
 
       # Step 4: Build the Jekyll site
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: JEKYLL_ENV=production bundle exec jekyll build
 
       # Step 5: Deploy to the 'publish' branch
       - name: Deploy to GitHub Pages
