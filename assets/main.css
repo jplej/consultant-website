@@ -1,0 +1,1208 @@
+@charset "UTF-8";
+/* load _sass/minima.scss */
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Basic styling
+ */
+body {
+  font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #111;
+  background-color: #fdfdfd;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+.highlight {
+  margin-bottom: 15px;
+}
+
+/**
+ * `main` element
+ */
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: 14px;
+}
+
+/**
+ * Lists
+ */
+ul, ol {
+  margin-left: 30px;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+/**
+ * Links
+ */
+a {
+  color: #2a7ae2;
+  text-decoration: none;
+}
+a:visited {
+  color: #1756a9;
+}
+a:hover {
+  color: #111;
+  text-decoration: underline;
+}
+.social-media-list a:hover {
+  text-decoration: none;
+}
+.social-media-list a:hover .username {
+  text-decoration: underline;
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: #828282;
+  border-left: 4px solid #e8e8e8;
+  padding-left: 15px;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  font-size: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+}
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/**
+ * Wrapper
+ */
+.wrapper {
+  max-width: -webkit-calc(800px - (30px * 2));
+  max-width: calc(800px - 30px * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+@media screen and (max-width: 800px) {
+  .wrapper {
+    max-width: -webkit-calc(800px - (30px));
+    max-width: calc(800px - (30px));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/**
+ * Clearfix
+ */
+.footer-col-wrapper:after, .wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Icons
+ */
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: #828282;
+  padding-right: 5px;
+  vertical-align: text-top;
+}
+
+.social-media-list li + li {
+  padding-top: 5px;
+}
+
+/**
+ * Tables
+ */
+table {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+  color: #3f3f3f;
+  border-collapse: collapse;
+  border: 1px solid #e8e8e8;
+}
+table tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+table th, table td {
+  padding: 9.999999999px 15px;
+}
+table th {
+  background-color: #f0f0f0;
+  border: 1px solid #dedede;
+  border-bottom-color: #c9c9c9;
+}
+table td {
+  border: 1px solid #e8e8e8;
+}
+
+/**
+ * Site header
+ */
+.site-header {
+  border-top: 5px solid #424242;
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 55.95px;
+  position: relative;
+}
+
+.site-title {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+}
+.site-title, .site-title:visited {
+  color: #424242;
+}
+
+.site-nav {
+  float: right;
+  line-height: 54px;
+}
+.site-nav .nav-trigger {
+  display: none;
+}
+.site-nav .menu-icon {
+  display: none;
+}
+.site-nav .page-link {
+  color: #111;
+  line-height: 1.5;
+}
+.site-nav .page-link:not(:last-child) {
+  margin-right: 20px;
+}
+@media screen and (max-width: 600px) {
+  .site-nav {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    text-align: right;
+  }
+  .site-nav label[for=nav-trigger] {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 36px;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .site-nav .menu-icon {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .site-nav .menu-icon > svg {
+    fill: #424242;
+  }
+  .site-nav input ~ .trigger {
+    clear: both;
+    display: none;
+  }
+  .site-nav input:checked ~ .trigger {
+    display: block;
+    padding-bottom: 5px;
+  }
+  .site-nav .page-link {
+    display: block;
+    margin-left: 20px;
+    padding: 5px 10px;
+  }
+  .site-nav .page-link:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 30px 0;
+}
+
+.footer-heading {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.footer-col-wrapper {
+  font-size: 15px;
+  color: #828282;
+  margin-left: -15px;
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: 15px;
+  padding-left: 15px;
+}
+
+.footer-col-1 {
+  width: -webkit-calc(35% - (30px / 2));
+  width: calc(35% - 30px / 2);
+}
+
+.footer-col-2 {
+  width: -webkit-calc(20% - (30px / 2));
+  width: calc(20% - 30px / 2);
+}
+
+.footer-col-3 {
+  width: -webkit-calc(45% - (30px / 2));
+  width: calc(45% - 30px / 2);
+}
+
+@media screen and (max-width: 800px) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (30px / 2));
+    width: calc(50% - 30px / 2);
+  }
+  .footer-col-3 {
+    width: -webkit-calc(100% - (30px / 2));
+    width: calc(100% - 30px / 2);
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (30px / 2));
+    width: calc(100% - 30px / 2);
+  }
+}
+/**
+ * Page content
+ */
+.page-content {
+  padding: 30px 0;
+  flex: 1;
+}
+
+.page-heading {
+  font-size: 32px;
+}
+
+.post-list-heading {
+  font-size: 28px;
+}
+
+.post-list {
+  margin-left: 0;
+  list-style: none;
+}
+.post-list > li {
+  margin-bottom: 30px;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: #828282;
+}
+
+.post-link {
+  display: block;
+  font-size: 24px;
+}
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: 30px;
+}
+
+.post-title {
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+@media screen and (max-width: 800px) {
+  .post-title {
+    font-size: 36px;
+  }
+}
+
+.post-content {
+  margin-bottom: 30px;
+}
+.post-content h2 {
+  font-size: 32px;
+}
+@media screen and (max-width: 800px) {
+  .post-content h2 {
+    font-size: 28px;
+  }
+}
+.post-content h3 {
+  font-size: 26px;
+}
+@media screen and (max-width: 800px) {
+  .post-content h3 {
+    font-size: 22px;
+  }
+}
+.post-content h4 {
+  font-size: 20px;
+}
+@media screen and (max-width: 800px) {
+  .post-content h4 {
+    font-size: 18px;
+  }
+}
+
+/**
+ * Syntax highlighting styles
+ */
+.highlight {
+  background: #fff;
+}
+.highlighter-rouge .highlight {
+  background: #eef;
+}
+.highlight .c {
+  color: #998;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .k {
+  font-weight: bold;
+}
+.highlight .o {
+  font-weight: bold;
+}
+.highlight .cm {
+  color: #998;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #998;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .gd {
+  color: #000;
+  background-color: #fdd;
+}
+.highlight .gd .x {
+  color: #000;
+  background-color: #faa;
+}
+.highlight .ge {
+  font-style: italic;
+}
+.highlight .gr {
+  color: #a00;
+}
+.highlight .gh {
+  color: #999;
+}
+.highlight .gi {
+  color: #000;
+  background-color: #dfd;
+}
+.highlight .gi .x {
+  color: #000;
+  background-color: #afa;
+}
+.highlight .go {
+  color: #888;
+}
+.highlight .gp {
+  color: #555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaa;
+}
+.highlight .gt {
+  color: #a00;
+}
+.highlight .kc {
+  font-weight: bold;
+}
+.highlight .kd {
+  font-weight: bold;
+}
+.highlight .kp {
+  font-weight: bold;
+}
+.highlight .kr {
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #458;
+  font-weight: bold;
+}
+.highlight .m {
+  color: #099;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #458;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #900;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #900;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbb;
+}
+.highlight .mf {
+  color: #099;
+}
+.highlight .mh {
+  color: #099;
+}
+.highlight .mi {
+  color: #099;
+}
+.highlight .mo {
+  color: #099;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .bp {
+  color: #999;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .il {
+  color: #099;
+}
+
+/* ------------------------------------- */
+/*           Nord Theme Colors           */
+/* ------------------------------------- */
+:root {
+  --nord0: #2E3440; /* Polar Night - Darkest */
+  --nord1: #3B4252; /* Polar Night - Dark */
+  --nord2: #434C5E; /* Polar Night */
+  --nord3: #4C566A; /* Polar Night - Lightest */
+  --nord4: #D8DEE9; /* Snow Storm - Light */
+  --nord5: #E5E9F0; /* Snow Storm */
+  --nord6: #ECEFF4; /* Snow Storm - Lightest */
+  --nord7: #8FBCBB; /* Frost */
+  --nord8: #88C0D0; /* Frost */
+  --nord9: #81A1C1; /* Frost */
+  --nord10: #5E81AC; /* Frost - Dark */
+  --nord11: #BF616A; /* Aurora - Red */
+  --nord12: #D08770; /* Aurora - Orange */
+  --nord13: #EBCB8B; /* Aurora - Yellow */
+  --nord14: #A3BE8C; /* Aurora - Green */
+  --nord15: #B48EAD; /* Aurora - Purple */
+}
+
+/* ------------------------------------- */
+/*          Light & Dark Mode Setup      */
+/* ------------------------------------- */
+/* Light Mode Variables */
+/* Light background */
+/* Raised elements */
+/* UI Background */
+/* Dark text */
+/* Dark text */
+/* light text */
+/* light text */
+/* Highlighted text */
+/* Dark Mode Variables */
+/* Link color */
+/* Hover effect color */
+/* Border color */
+/* Accent color */
+/* Success */
+/* Warning */
+/* Error */
+/* ------------------------------------- */
+/*           Font Variables              */
+/* ------------------------------------- */
+/* Font for titles and subtitles */
+/* Font for body text */
+/* ------------------------------------- */
+/*          General Styles               */
+/* ------------------------------------- */
+body {
+  background-color: var(--nord4);
+  color: var(--nord1);
+  font-family: "T Serif", serif; /* Applied body text font */
+  font-size: 20px; /* Set base font size */
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+a {
+  color: var(--nord10);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--nord7);
+}
+
+h1 {
+  font-family: "Century Gothic", sans-serif; /* Applied title and subtitle font */
+  color: var(--nord0);
+  font-size: 2.5rem; /* Font size for h1 */
+  text-align: center; /* Center the text */
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-family: "Century Gothic", sans-serif;
+  color: var(--nord0);
+  font-size: 2rem; /* Font size for h2 */
+  margin: 0 0 1rem;
+  text-align: left;
+}
+
+h3 {
+  font-family: "Century Gothic", sans-serif;
+  color: var(--nord0);
+  font-size: 1.75rem; /* Font size for h3 */
+  margin: 0 0 1rem;
+  text-align: left;
+}
+
+/* ------------------------------------- */
+/*          Blog and posts               */
+/* ------------------------------------- */
+.post-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.post-list li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* ------------------------------------- */
+/*           Navbar Styles               */
+/* ------------------------------------- */
+/* Wrapper for the entire header content */
+.nav-wrapper {
+  background-color: var(--nord1);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--nord3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  position: sticky !important;
+  top: 0;
+  z-index: 10;
+}
+
+/* Site branding (logo or title) */
+.site-branding {
+  flex: 1;
+}
+
+/* Site title styles */
+.site-title {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--nord10) !important;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--nord7) !important;
+  text-decoration: none;
+}
+
+/* Hamburger menu toggle for mobile */
+.nav-toggle {
+  display: none; /* Hidden on desktop */
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Menu icon for the hamburger button */
+.nav-icon {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-icon svg {
+  fill: var(--nord0);
+  width: 24px;
+  height: 24px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  flex: 2;
+}
+
+/* Navigation List Styles */
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem; /* Adds space between links */
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigation List Item */
+.nav-item {
+  display: inline-block;
+}
+
+.page-link {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-family: "Century Gothic", sans-serif;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: var(--nord6) !important;
+  text-decoration: none; /* Remove the underline */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Hover effect for page links */
+.page-link:hover {
+  color: var(--nord10);
+  background-color: var(--nord3);
+  text-decoration: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* Show hamburger menu on mobile */
+  }
+  .nav-menu {
+    display: none; /* Hide nav links on mobile */
+  }
+  /* When checkbox is checked, show the menu */
+  .menu-toggle:checked ~ .nav-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--nord1);
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .nav-list {
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 1rem;
+    text-align: center;
+  }
+  .page-link {
+    display: block;
+    width: 100%;
+  }
+}
+/* ------------------------------------- */
+/*          landing_blocks               */
+/* ------------------------------------- */
+.landing-block {
+  width: 100vw;
+  padding: 120px 400px; /* Adjust as needed */
+  text-align: center;
+  border-radius: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hero-block {
+  background-color: var(--nord1);
+}
+
+.hero-block h1 {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--nord6) !important;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.logos-block {
+  background-color: var(--nord4);
+}
+
+.logos-block h1 {
+  font-size: 2rem;
+  font-family: "Century Gothic", sans-serif;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.cta-block {
+  background-color: var(--nord1);
+}
+
+.cta-block h1 {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 2rem;
+  color: var(--nord6) !important;
+  letter-spacing: 4px;
+  text-decoration: none;
+}
+
+.testimonials-block {
+  background-color: var(--nord6);
+}
+
+/* ------------------------------------- */
+/*          service blocks               */
+/* ------------------------------------- */
+.service-block {
+  background-color: var(--nord6);
+  width: 150%;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row; /* Adjusted to align content horizontally */
+}
+
+.service-block-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.service-block-content p {
+  margin: 0 0 10px 0;
+  font-family: "T Serif", serif;
+  font-size: 20px;
+}
+
+.service-block h1 {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--nord1);
+  text-align: left;
+}
+
+.block-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* ------------------------------------- */
+/*          Buttons                      */
+/* ------------------------------------- */
+/* ------------------------------------- */
+/*           Footer Styles               */
+/* ------------------------------------- */
+.site-footer {
+  padding: 2rem;
+  background-color: var(--nord1);
+  color: var(--nord6) !important;
+  width: 100%; /* Ensure footer spans the full width of the screen */
+  text-align: center; /* Ensure the entire footer is centered */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner Wrapper to limit content width */
+.footer-wrapper {
+  max-width: 1200px; /* Limit the max width of the inner content */
+  margin: 0 auto; /* Center the footer content */
+  display: flex;
+  flex-direction: column; /* Ensure the copyright and columns are stacked */
+  align-items: center; /* Center everything horizontally */
+}
+
+/* Footer Columns - Center the columns within the footer */
+.footer-columns {
+  display: flex;
+  justify-content: space-evenly; /* Center the columns evenly */
+  width: 100%;
+}
+
+/* Individual Footer Column */
+.footer-col {
+  flex-grow: 1; /* Ensure columns take equal space */
+  max-width: 250px; /* Limit the column width */
+  text-align: left; /* Keep content left-aligned */
+  margin: 0 auto;
+}
+
+/* Footer Titles */
+.footer-col h3 {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 1.75rem;
+  color: var(--nord4);
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style-type: none;
+  text-align: left; /* Keep the list content aligned to the left */
+}
+
+/* Footer Links Styling */
+.footer-links a {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 16px;
+  color: var(--nord6) !important;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--nord10);
+  background-color: var(--nord3);
+}
+
+/* Ensure footer columns align properly */
+.footer-col {
+  text-align: left; /* Ensure the whole column aligns left */
+  margin: 0;
+  padding: 0; /* Ensure no extra padding inside columns */
+}
+
+/* Responsive: Stack footer columns on mobile */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-col {
+    margin-bottom: 1rem;
+  }
+}
+/* Footer Copyright - Center Align */
+.footer-copyright {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Century Gothic", sans-serif;
+  color: var(--nord3);
+  width: 100%; /* Ensure the copyright takes up the full width */
+}
+
+/* ------------------------------------- */
+/*          Code Block Styles            */
+/* ------------------------------------- */
+pre, code {
+  background-color: var(--nord6);
+  color: var(--nord0);
+  padding: 0.5rem; /* Reduced padding */
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+  overflow-x: auto;
+  line-height: 1.5; /* Adjusted line height for better readability */
+  max-width: 100%; /* Prevents the block from overflowing */
+  margin-bottom: 1rem; /* Adds spacing to avoid overlapping with other text */
+}
+
+code {
+  color: var(--nord9);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------- */
+/*          Logos Formatting             */
+/* ------------------------------------- */
+/* Logo Container Styling */
+.logo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Logo Image Styling */
+.logo-container img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* ------------------------------------- */
+/*          Button Formatting            */
+/* ------------------------------------- */
+.link-button .btn {
+  display: flex; /* Makes the link behave like a button */
+  justify-content: center;
+  width: 250px;
+  margin: 0 auto;
+  padding: 10px 20px; /* Add some padding to make it look like a button */
+  background-color: var(--nord10); /* Background from UI variable */
+  color: var(--nord6); /* Use light text color */
+  text-align: center; /* Center the text */
+  font-family: "Century Gothic", sans-serif; /* Button font */
+  font-weight: bold;
+  font-size: 1.75rem; /* Adjust font size */
+  text-decoration: none; /* Remove underline from link */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover state for the button */
+.link-button .btn:hover {
+  background-color: var(--nord7);
+  color: var(--nord6); /* Use light text color */
+  border-color: var(--nord7); /* Change border color on hover */
+}
+
+.link-button-service .btn {
+  display: flex;
+  justify-content: center;
+  width: 200px; /* Reduced width */
+  margin: 10px auto;
+  padding: 10px 0px; /* Slightly smaller padding */
+  background-color: var(--nord10);
+  color: var(--nord6);
+  text-align: center;
+  font-family: "Century Gothic", sans-serif;
+  font-weight: bold;
+  font-size: 20px; /* Adjusted font size */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state for the smaller button */
+.link-button-service .btn:hover {
+  background-color: var(--nord7);
+  color: var(--nord6);
+  border-color: var(--nord7);
+}
+
+/* ------------------------------------- */
+/*          Miscellaneous                */
+/* ------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+main.page-content, .wrapper {
+  margin: 0; /* No gap at all */
+  padding: 0; /* No padding inside */
+  width: 100%; /* Ensure it spans the full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  box-sizing: border-box; /* Ensure padding doesn’t affect width */
+  text-align: left;
+}
+
+/* ------------------------------------- */
+/*          Miscellaneous                */
+/* ------------------------------------- */
+.centered-image {
+  width: 400px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounds the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow */
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
