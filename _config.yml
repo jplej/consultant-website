@@ -21,7 +21,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-polyglot
   - jekyll-seo-tag
-  - jekyll-postcss
+  - jekyll-tailwindcss
+#  - jekyll-postcss
 
 postcss:
   cache: false
