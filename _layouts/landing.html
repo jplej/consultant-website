@@ -7,7 +7,7 @@
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
+    <main class="page-content">
       <div class="wrapper">
         {% assign current_lang = page.lang | default: site.active_lang %}
         {% assign landing_blocks = site.landing_blocks | where: "lang", current_lang %}

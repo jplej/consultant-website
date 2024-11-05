@@ -54,8 +54,8 @@ $secondary-highlight-text-color: var(--nord7);
 //$highlight-text-color: var(--nord8); /* Highlighted text */
 
 // other colors
-$link-color: var(--nord7); /* Link color */
-$hover-color: var(--nord10); /* Hover effect color */
+$link-color: var(--nord10); /* Link color */
+$hover-color: var(--nord7); /* Hover effect color */
 
 $border-color: var(--nord3); /* Border color */
 $accent-color: var(--nord9); /* Accent color */
@@ -88,12 +88,12 @@ body {
     font-size: $font-size-body; /* Set base font size */
     margin: 0;
     padding: 0;
+    text-align: left;
 }
 
 a {
     color: $link-color;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -113,6 +113,7 @@ h2 {
     color: $bolder-text-color;
     font-size: $font-size-h2; /* Font size for h2 */
     margin: 0 0 1rem;
+    text-align: left;
 }
 
 h3 {
@@ -120,8 +121,24 @@ h3 {
     color: $bolder-text-color;
     font-size: $font-size-h3; /* Font size for h3 */
     margin: 0 0 1rem;
+    text-align: left;
 }
 
+/* ------------------------------------- */
+/*          Blog and posts               */
+/* ------------------------------------- */
+
+.post-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.post-list li {
+    margin-bottom: 10px;
+    text-align: left;
+}
 
 
 
@@ -286,6 +303,8 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
+    text-align: center;
+
 }
 
 .logos-block {
@@ -477,6 +496,7 @@ h3 {
 }
 
 
+
 /* ------------------------------------- */
 /*          Code Block Styles            */
 /* ------------------------------------- */
@@ -604,6 +624,7 @@ main.page-content, .wrapper {
     flex-direction: column;
     align-items: center; /* Center content horizontally */
     box-sizing: border-box; /* Ensure padding doesn’t affect width */
+    text-align: left;
 }
 
 
