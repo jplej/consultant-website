@@ -2,7 +2,7 @@
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Consulting website for jplejeune
-baseurl: #"/consultant-website" # The subpath for your project
+baseurl: "/consultant-website" # The subpath for your project
 url: "https://jplej.github.io" # Your GitHub Pages user site URL
 twitter_username: jekyllrb
 github_username:  jekyll
