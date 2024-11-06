@@ -58,13 +58,13 @@ module.exports = {
         body: ['Roboto', 'Open Sans', 'sans-serif'],
 
         // Headings
-        heading: ['Georgia', 'Playfair Display', 'Montserrat', 'Helvetica', 'serif'],
+        heading: ['Oswald', 'Playfair Display', 'Montserrat', 'Helvetica', 'serif'],
 
         // Buttons & Navigation
-        button: ['Arial', 'Lato', 'sans-serif'],
+        button: ['Oswald', 'Arial', 'Lato', 'sans-serif'],
 
         // Code or Technical Text
-        code: ['Inconsolata', 'Courier New', 'monospace'],
+        code: ['Roboto Mono', 'Inconsolata', 'Courier New', 'monospace'],
       },
     },
   },

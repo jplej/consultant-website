@@ -9,7 +9,8 @@
           {% for lang in site.languages %}
             <li class="{% if page.lang == lang %} bg-BgDark-secondary {% else %} hover:bg-BgDark-secondary transition-colors duration-300 {% endif %} py-2 px-3 rounded">
               {% if lang == site.default_lang %}
-                <a href="{{ site.baseurl }}{{ page.url }}" class="text-textOnDark-primary">
+                <a {% static_href %}href="{{ site.baseurl }}{{ page.url }}"{% endstatic_href %}
+                class="text-textOnDark-primary">
                   English
                 </a>
               {% else %}
