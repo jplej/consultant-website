@@ -10,7 +10,7 @@ layout: default
   {% assign sorted_blocks = landing_blocks | sort: "weight" %}
 
   {% for block in sorted_blocks %}
-  <div class="{{ block.css_class }} py-12">
+  <div class="{{ block.css_class }} py-12 bg-{{ block.bgColor }}">
     <div class="landing_inner max-w-7xl px-5 mx-auto">
       {{ block.content }}
     </div>

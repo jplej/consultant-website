@@ -4,7 +4,13 @@ lang_name: "Français"
 cta_title: "Nos clients bénéficient de solutions BI et de données automatisées qui rationalisent les processus, améliorent la prise de décision et permettent des informations d’investissement plus rapides et plus précises."
 cta_button: "Réservez un appel!"
 cta_link: "https://cal.com/jplr8922/introcall"
-service_button: "Apprenez Comment!"
+service_button: "En savoir plus"
+contact_button: "Contact"
+about_button: "À Propos..."
 
 logos_title: "Quelques organisations avec lesquelles nous avons travaillé"
+client_title: Vous souhaitez rationaliser la prise de décision financière ?
+client_text: Nous aidons les CFOs et les investisseurs à exploiter leurs données, l'IA et les technologies cloud pour élever leurs opérations à un niveau supérieur.
+
+
 sidebar_title: Tous les articles du blog

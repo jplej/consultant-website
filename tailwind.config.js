@@ -13,6 +13,23 @@ module.exports = {
     './pages/**/*.md',
     './pages/**/*.html',
   ],
+  safelist: [
+    'bg-BgLight-primary',
+    'bg-BgLight-secondary',
+    'bg-BgDark-primary',
+    'bg-BgDark-secondary',
+    'bg-BgDark-border',
+    'bg-accent-main',
+    'bg-accent-highlight',
+    'bg-accent-error',
+    'bg-accent-warning',
+    'bg-accent-success',
+    'bg-accent-url',
+    'text-textOnDark-primary',
+    'text-textOnDark-secondary',
+    'text-textOnLight-primary',
+    'text-textOnLight-secondary'
+  ],
   theme: {
     extend: {
       colors: {
