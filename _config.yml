@@ -16,6 +16,9 @@ collections:
   # posts:
    # permalink: /blog/:slug/
 
+# for windows wsl
+force_polling: true
+
 # Build settings
 plugins:
   - jekyll-feed

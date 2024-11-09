@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .button {
+      @apply w-fit px-10 py-4 text-textOnDark-primary font-heading bg-accent-highlight rounded hover:bg-accent-main mx-auto md:ml-auto md:mr-0 text-2xl
+    }
+  }

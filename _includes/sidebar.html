@@ -1,15 +1,15 @@
 <aside class="flex flex-col gap-1 overflow-y-auto max-h-[80vh] my-14">
       {%- assign posts = site.posts | where: "lang",page.lang -%}
   {%- if posts.size > 0 -%}
-  <h2 class="text-3xl md:text-4xl">{{site.data[page.lang].l10n.sidebar_title}}</h2>
+  <h2 class="text-3xl md:text-4xl text-textOnLight-primary font-heading">{{site.data[page.lang].l10n.sidebar_title}}</h2>
   <div class="grid gap-2 mb-2">
     {%- for post in posts -%}
     <div class="grid">
       <a href="{{post.url | relative_url}}" class="grid no-underline  text-slate-600 hover:text-black">
-        <span class="font-medium text-xl">{{post.title}}</span>
-        <small>{{post.date | date: '%B %d, %Y'}}
+        <span class="font-heading text-textOnLight-primary text-xl">{{post.title}}</span>
+        <small>{{post.date | date: '%Y-%m-%d'}}
           {% if post.author %}
-            - {{post.author}}
+            | {{post.author}}
           {% endif %}</small>
       </a>
     </div>

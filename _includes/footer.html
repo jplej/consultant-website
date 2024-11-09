@@ -1,41 +1,44 @@
-<footer class="site-footer bg-slate-100">
+<footer class="site-footer bg-BgDark-primary text-textOnDark-primary">
   <div class="footer-wrapper">
 
-    <div class="footer-columns grid grid-cols-3 max-w-7xl mx-auto py-8">
+    <div class="footer-columns grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto py-8 gap-4">
       
-      <!-- first column, languages -->
+      <!-- First column, languages -->
       <div class="footer-col">
-        <ul class="footer-links text-center">
+        <ul class="footer-links text-center font-heading text-lg">
           {% for lang in site.languages %}
-            <li {% if page.lang == lang %}class="border border-slate-400"{% endif %}>
+            <li class="{% if page.lang == lang %} bg-BgDark-secondary {% else %} hover:bg-BgDark-secondary transition-colors duration-300 {% endif %} py-2 px-3 rounded">
               {% if lang == site.default_lang %}
-                <a href=" {{ site.baseurl }}{{ page.url }}" >
+                <a {% static_href %}href="{{ site.baseurl }}{{ page.url }}"{% endstatic_href %}
+                class="text-textOnDark-primary">
                   English
                 </a>
               {% else %}
-                <a href=" {{ site.baseurl }}/{{ lang }}{{ page.url }}">Français</a>
+                <a href="{{ site.baseurl }}/{{ lang }}{{ page.url }}" class="text-textOnDark-primary">Français</a>
               {% endif %}
             </li>
           {% endfor %}
         </ul>
       </div>
 
+      <!-- Second column, contact links -->
       <div class="footer-col">
-        <ul class="footer-links text-center">
-          <li><a href="https://calendar.example.com" target="_blank">Calendar</a></li>
-          <li><a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
-          <li><a href="mailto:your-email@example.com">Email</a></li>
+        <ul class="footer-links text-center font-heading text-lg">
+          <li><a href="https://calendar.example.com" target="_blank" class="text-textOnDark-primary hover:bg-BgDark-secondary transition-colors duration-300 py-2 px-3 block rounded">Calendar</a></li>
+          <li><a href="https://linkedin.com/in/your-profile" target="_blank" class="text-textOnDark-primary hover:bg-BgDark-secondary transition-colors duration-300 py-2 px-3 block rounded">LinkedIn</a></li>
+          <li><a href="mailto:your-email@example.com" class="text-textOnDark-primary hover:bg-BgDark-secondary transition-colors duration-300 py-2 px-3 block rounded">Email</a></li>
         </ul>
       </div>
 
+      <!-- Third column, navigation links -->
       <div class="footer-col">
         <nav class="footer-nav-menu">
-          <ul class="footer-links text-center">
+          <ul class="footer-links text-center font-heading text-lg">
             {% assign sorted_pages = site.pages | sort: "weight" %}
             {% for my_page in sorted_pages %}
               {% if my_page.title and my_page.weight %}
-                <li {% if page.title == my_page.title %}class="border border-slate-400"{% endif %}>
-                  <a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                <li class="{% if page.title == my_page.title %} bg-BgDark-secondary {% else %} hover:bg-BgDark-secondary transition-colors duration-300 {% endif %} py-2 px-3 rounded">
+                  <a href="{{ my_page.url | relative_url }}" class="text-textOnDark-primary">{{ my_page.title | escape }}</a>
                 </li>
               {% endif %}
             {% endfor %}
@@ -45,12 +48,10 @@
 
     </div>
 
-    <div class="footer-copyright text-center text-slate-200 bg-slate-800 py-8">
-      <p>Jean-Philippe Lejeune © {{site.time | date: "%Y"}}</p>
+    <!-- Footer copyright -->
+    <div class="footer-copyright text-center bg-BgDark-primary text-textOnDark-secondary py-8 font-heading text-lg">
+      <p>Jean-Philippe Lejeune © {{ site.time | date: "%Y" }}</p>
     </div>
 
   </div>
-
-
-
 </footer>

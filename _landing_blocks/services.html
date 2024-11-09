@@ -1,0 +1,28 @@
+---
+lang: en
+css_class: "services-block"
+bgColor: 'BgLight-secondary'
+weight: 5
+---
+
+{%- assign services = site.data[page.lang].services -%}
+
+<h2 class="text-center text-textOnLight-primary font-heading"> {{ services.title }} </h2>
+
+<ul>
+    {%- for item in services.items -%}
+      <li class="text-textOnLight-primary font-body mb-6">
+        <strong class="block text-2xl font-bold">{{ item.title }}</strong>
+        <p class="text-xl">{{ item.description }}</p>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+<br> 
+<br> 
+<br> 
+<br> 
+
+<div class="text-center">
+    <a href="{{ site.baseurl }}/services/" class="button">{{site.data.l10n.service_button}}</a>
+</div>

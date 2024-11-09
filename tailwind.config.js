@@ -13,6 +13,23 @@ module.exports = {
     './pages/**/*.md',
     './pages/**/*.html',
   ],
+  safelist: [
+    'bg-BgLight-primary',
+    'bg-BgLight-secondary',
+    'bg-BgDark-primary',
+    'bg-BgDark-secondary',
+    'bg-BgDark-border',
+    'bg-accent-main',
+    'bg-accent-highlight',
+    'bg-accent-error',
+    'bg-accent-warning',
+    'bg-accent-success',
+    'bg-accent-url',
+    'text-textOnDark-primary',
+    'text-textOnDark-secondary',
+    'text-textOnLight-primary',
+    'text-textOnLight-secondary'
+  ],
   theme: {
     extend: {
       colors: {
@@ -32,7 +49,7 @@ module.exports = {
         // Text Colors on Dark Backgrounds
         textOnDark: {
           primary: '#ECEFF4',  // `nord6`
-          secondary: '#E5E9F0', // `nord5`
+          secondary: '#d8dee9', // `nord5`
         },
 
         // Text Colors on Light Backgrounds
@@ -50,6 +67,21 @@ module.exports = {
           success: '#A3BE8C',      // `nord14` (green)
           url: '#b48ead' // `nord15' (purple)
         },
+      },
+
+      // Font Families
+      fontFamily: {
+        // Body text
+        body: ['Roboto', 'Open Sans', 'sans-serif'],
+
+        // Headings
+        heading: ['Oswald', 'Playfair Display', 'Montserrat', 'Helvetica', 'serif'],
+
+        // Buttons & Navigation
+        button: ['Oswald', 'Arial', 'Lato', 'sans-serif'],
+
+        // Code or Technical Text
+        code: ['Roboto Mono', 'Inconsolata', 'Courier New', 'monospace'],
       },
     },
   },

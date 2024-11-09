@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="w-full py-8 xl:py-12">
-  <h1 class="font-semibold text-4xl lg:text-5xl xl:text-6xl text-center md:text-center text-slate-700 max-w-3xl mx-auto tracking-tighter	">{{page.page_heading}}</h1>
+  <h1 class="font-heading text-textOnLight-primary text-4xl lg:text-5xl xl:text-6xl text-center md:text-center max-w-3xl mx-auto tracking-tighter	">{{page.page_heading}}</h1>
     {% assign current_lang = page.lang | default: site.active_lang %}
     {% assign service_blocks = site.service_blocks | where: "lang", current_lang %}
     {% assign sorted_blocks = service_blocks | sort: 'weight' %}
@@ -11,7 +11,7 @@ layout: default
     <div class="service-block py-4 xl:py-12 grid md:grid-cols-2 gap-6 max-w-7xl px-5 mx-auto">
       {%- assign n = forloop.index | times: 1 -%}
       {%- assign order = n | modulo: 2 -%}
-      <div class="service-block-content text-justify {% if order == 1 %} md:order-3 {% else %} md:order-1{% endif %} ">
+      <div class="service-block-content font-body text-textOnLight-primary text-justify {% if order == 1 %} md:order-3 {% else %} md:order-1{% endif %} ">
         {{ block.content }}
         <div class="link-button-service">
           <a href="https://cal.com/jplr8922/introcall" class="w-fit px-10 py-2 rounded-md my-3 bg-slate-200 hover:bg-slate-100 hover:shadow-md mx-auto text-2xl border-solid border-slate-400 border block" target="_blank" rel="noopener noreferrer">Inquire</a>

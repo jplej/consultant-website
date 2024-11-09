@@ -1,0 +1,37 @@
+---
+lang: en
+css_class: "solution-block"
+bgColor: 'BgDark-primary'
+weight: 4
+---
+
+{%- assign solutions = site.data[page.lang].solutions -%}
+
+
+<div class="landing_inner max-w-7xl px-5 mx-auto bg-BgDark-primary">
+
+    <!--
+    <h2 class="text-center text-textOnLight-primary font-heading">{{testimonials.title}}</h2>
+    -->
+
+    <div class="testimonials_grid flex justify-center flex-wrap gap-5 ">
+        {%- for item in solutions.items -%}
+        <div class="card p-5 border shadow-lg rounded-xl max-w-56 bg-white ">
+            <h2 class="text-center font-heading">{{item.name}}</h2>
+            <p class=""> {{item.problem}} </p>
+            <hr class="bg-slate-200">
+            <p>{{item.text}}</p>
+        </div>
+        {%- endfor -%}
+
+    </div>
+
+
+<br>
+<br>
+
+    <div class="text-center">
+        <a href="https://cal.com/jplr8922/introcall" class="button">{{site.data.l10n.contact_button}}</a>
+    </div>
+
+</div>
