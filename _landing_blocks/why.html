@@ -1,13 +1,15 @@
 ---
 lang: en
-css_class: "services-block"
+css_class: "why-block"
 bgColor: 'BgDark-secondary'
 weight: 6 
 ---
 
-<h1 class="text-center text-textOnDark-primary font-heading">Why Us?</h2>
+{%- assign why = site.data.why -%}
 
-<h2 class="text-center text-textOnDark-primary font-heading">Because...</h2>
+<h2 class="text-center text-textOnDark-secondary font-heading"> {{ why.title }} </h2>
+
+<p class="font-body text-2xl text-textOnDark-secondary mt-2" style="font-style: italic;">{{ why.text }}</p>
 
 <br>
 <br>

@@ -28,7 +28,14 @@ module.exports = {
     'text-textOnDark-primary',
     'text-textOnDark-secondary',
     'text-textOnLight-primary',
-    'text-textOnLight-secondary'
+    'text-textOnLight-secondary',
+    'text-accent-main',
+    'text-accent-highlight',
+    'text-accent-error',
+    'text-accent-url',
+    'text-accent-main',
+    'text-accent-warning',
+    'text-accent-success',
   ],
   theme: {
     extend: {

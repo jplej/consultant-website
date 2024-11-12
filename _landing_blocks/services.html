@@ -5,18 +5,26 @@ bgColor: 'BgLight-secondary'
 weight: 5
 ---
 
-{%- assign services = site.data[page.lang].services -%}
+{%- assign services = site.data.services -%}
 
-<h2 class="text-center text-textOnLight-primary font-heading"> {{ services.title }} </h2>
+<h2 class="text-center text-textOnLight-primary font-heading">{{ services.title }}</h2>
 
 <ul>
-    {%- for item in services.items -%}
-      <li class="text-textOnLight-primary font-body mb-6">
-        <strong class="block text-2xl font-bold">{{ item.title }}</strong>
-        <p class="text-xl">{{ item.description }}</p>
-      </li>
-    {%- endfor -%}
-  </ul>
+  {%- for item in services.items -%}
+    <li class="flex items-start mb-6">
+      <!-- Icon container: hidden on small screens, visible on medium and up -->
+      <div class="pr-4 flex items-center hidden md:block" style="min-width: 110px;">
+        <i class="{{ item.icon }} text-textOnLight-secondary" style="font-size: 75px;"></i>
+      </div>
+
+      <!-- Text container -->
+      <div class="flex flex-col justify-center">
+        <h3 class="text-3xl font-heading text-textOnLight-primary">{{ item.title }}</h3>
+        <h4 class="font-body text-2xl text-textOnLight-primary mt-2">{{ item.description }}</h4>
+      </div>
+    </li>
+  {%- endfor -%}
+</ul>
 
 <br> 
 <br> 
@@ -24,5 +32,5 @@ weight: 5
 <br> 
 
 <div class="text-center">
-    <a href="{{ site.baseurl }}/services/" class="button">{{site.data.l10n.service_button}}</a>
+    <a href="{{ site.baseurl }}/services/" class="button">{{ site.data.l10n.service_button }}</a>
 </div>

@@ -1,14 +1,16 @@
-title: "Témoignages"
+title: Témoignages
 items:
-- name: G. Vigneau, Tresorisques Inc.
-  text: "Créatif et intelligent dans la recherche de solutions à des problèmes complexes."
-  description: "J'étais responsable de la modélisation financière de la solution SaaS D-Risk, qui comble le fossé entre les courtiers en devises et les PME internationales. L'automatisation de la gestion de trésorerie et l'optimisation des stratégies de couverture étaient essentielles pour la plateforme, ainsi que la priorisation du backlog serré pour fournir des fonctionnalités complexes dans les délais."
-
-- name: G. Vigneau, Tresorisques Inc.
-  text: "Créatif et intelligent dans la recherche de solutions à des problèmes complexes."
-  description: "J'étais responsable de la modélisation financière de la solution SaaS D-Risk, qui comble le fossé entre les courtiers en devises et les PME internationales. L'automatisation de la gestion de trésorerie et l'optimisation des stratégies de couverture étaient essentielles pour la plateforme, ainsi que la priorisation du backlog serré pour fournir des fonctionnalités complexes dans les délais."
-
-- name: G. Vigneau, Tresorisques Inc.
-  text: "Créatif et intelligent dans la recherche de solutions à des problèmes complexes."
-  description: "J'étais responsable de la modélisation financière de la solution SaaS D-Risk, qui comble le fossé entre les courtiers en devises et les PME internationales. L'automatisation de la gestion de trésorerie et l'optimisation des stratégies de couverture étaient essentielles pour la plateforme, ainsi que la priorisation du backlog serré pour fournir des fonctionnalités complexes dans les délais."
-
+  - name: G. Vigneau, Tresorisques Inc.
+    text: >
+      Créatif et intelligent dans la recherche de solutions à des problèmes 
+      complexes, l'expertise multifacette de Jean-Philippe nous a aidés à 
+      relever des défis en ingénierie financière, en architecture logicielle 
+      et en gestion de projet. Cette combinaison a permis de réduire 
+      considérablement le temps de développement et d'assurer que nous 
+      construisions les bonnes fonctionnalités.
+  - name: Coefficient Capital
+    text: >
+      Jean-Philippe nous a aidés à créer un datalake, à développer une application 
+      web pour visualiser des métriques d'investissement personnalisées et à 
+      accélérer notre processus de sélection. Il est fiable, professionnel, 
+      et un réel plaisir avec qui travailler.
