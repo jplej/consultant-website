@@ -5,8 +5,7 @@ bgColor: 'BgDark-primary'
 weight: 4
 ---
 
-{%- assign solutions = site.data[page.lang].solutions -%}
-
+{%- assign solutions = site.data.solutions -%}
 
 <div class="landing_inner max-w-7xl px-5 mx-auto bg-BgDark-primary">
 
@@ -17,10 +16,10 @@ weight: 4
     <div class="testimonials_grid flex justify-center flex-wrap gap-5 ">
         {%- for item in solutions.items -%}
         <div class="card p-5 border shadow-lg rounded-xl max-w-56 bg-white ">
-            <h2 class="text-center font-heading">{{item.name}}</h2>
-            <p class=""> {{item.problem}} </p>
+            <i class="{{ item.icon }} mb-3 text-{{ item.color }} mx-auto" style="font-size: 100px"></i>
+            <h2 class="text-center text-textOnLight-primary font-heading">{{item.name}}</h2>
             <hr class="bg-slate-200">
-            <p>{{item.text}}</p>
+            <p class="text-textOnLight-primary font-body">{{item.text}}</p>
         </div>
         {%- endfor -%}
 

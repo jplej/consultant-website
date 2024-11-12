@@ -1,9 +1,31 @@
 items:
-- name: Missing Opportunities
-  text: Are you missing opportunities due to a lack of time-sensitive information?
-- name: Unclear KPIs
-  text: Do you lack the crucial information and metrics to lead the discussion with your team or clients?
-- name: Growing Data Budget
-  text: Are you accumulating infrastructure bill without knowing their value?
-- name: Lack of Vision
-  text: Your business is to process information, but you don't have an IT roadmap?
+  - name: Harder
+    icon: "fa fa-gem"
+    color: "accent-main"
+    text: >
+      Legacy systems are fragile and prone to errors. Our financial expertise
+      enables us to implement quality assurance practices that reduce validation time 
+      by 90%, ensuring resilience and minimizing costly mistakes.
+
+  - name: Better
+    icon: "fa fa-gear"
+    color: "accent-error"
+    text: >
+      We standardized KPIs across teams with custom data solutions, aligning
+      decision-making and increasing platform usage by 4X. This approach helped
+      scale revenue growth by 2X and cut hedging costs by 25%.
+
+  - name: Faster
+    icon: "fa fa-bolt"
+    color: "accent-warning"
+    text: >
+      By automating workflows, we reduced daily transaction time by 75% and 
+      decision time by 50%, leading to increased deal volume and 
+      faster operations.
+
+  - name: Stronger
+    icon: "fa fa-brain"
+    color: "accent-url"
+    text: >
+      Leveraging AI and machine learning, we cross-analyze data to reveal new 
+      insights, identify unseen trends, and enhance decision-making.

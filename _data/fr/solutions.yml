@@ -1,9 +1,34 @@
 items:
-- problem: Are you missing opportunities due to a lack of time-sensitive information?
-  solution: xxx
-- problem: Do you lack key performance indicators to guide discussions with your team or clients?
-  solution: xxx
-- problem: Are you dissatisfied with your current IT systems, wasting valuable time on manual operations?
-  solution: xxx
-- problem: Are you sitting on a mountain of data but unsure of its value?
-  solution: xxx
+  - name: Résilience
+    icon: "fa fa-gem"
+    color: "accent-main"
+    text: >
+      Les systèmes anciens sont fragiles et sujets aux erreurs. Notre expertise 
+      financière nous permet de mettre en œuvre des pratiques d'assurance qualité 
+      qui réduisent le temps de validation de 90 %, garantissant la résilience 
+      et minimisant les erreurs coûteuses.
+
+  - name: Performance
+    icon: "fa fa-gear"
+    color: "accent-error"
+    text: >
+      Nous avons standardisé les indicateurs clés de performance (KPI) entre les équipes 
+      avec des solutions de données sur mesure, alignant la prise de décision et 
+      augmentant l'utilisation de la plateforme par 4X. Cette approche a contribué à 
+      doubler la croissance des revenus et à réduire les coûts de couverture de 25 %.
+
+  - name: Cadence
+    icon: "fa fa-bolt"
+    color: "accent-warning"
+    text: >
+      En automatisant les flux de travail, nous avons réduit le temps de transaction 
+      quotidien de 75 % et le temps de décision de 50 %, augmentant ainsi le volume 
+      des transactions et accélérant les opérations.
+
+  - name: Intelligence
+    icon: "fa fa-brain"
+    color: "accent-url"
+    text: >
+      En tirant parti de l'intelligence artificielle et de l'apprentissage automatique, 
+      nous croisons les données pour révéler de nouvelles informations, identifier des 
+      tendances cachées et améliorer la prise de décision.

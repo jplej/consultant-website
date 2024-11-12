@@ -1,8 +1,11 @@
 title: Services
 items:
 - title: Évaluation Initiale
-  description: Évaluation complète avec ateliers, interviews et analyse pour fournir un rapport et une feuille de route améliorant l'efficacité et la prise de décision du front office.
+  description: Évaluation complète comprenant des ateliers, des entretiens et des analyses, pour fournir un rapport et une feuille de route visant à améliorer l'efficacité du front office et la prise de décision.
+  icon: "fa fa-paper-plane"
 - title: Ingénierie des Données
-  description: Création et maintenance de lacs de données conformes et évolutifs, avec intégration de l'IA et surveillance proactive.
+  description: Création et maintenance de lacs de données et bases de données conformes et évolutives, avec intégration de l'intelligence artificielle et surveillance proactive.
+  icon: "fa fa-database"
 - title: Intelligence d'Affaires
-  description: Développement de plateformes et tableaux de bord pour des insights en temps réel, des workflows automatisés et une prise de décision optimisée.
+  description: Développement de plateformes de données et de tableaux de bord pour offrir une vue en temps réel, automatiser les flux de travail et optimiser la prise de décision.
+  icon: "fa fa-bar-chart"

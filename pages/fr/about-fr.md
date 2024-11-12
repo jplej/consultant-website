@@ -12,12 +12,12 @@ weight: 4
 <img src="{{ site.baseurl }}/assets/images/jplej_corpo.bmp" 
      alt="jplej_corpo" class="mx-auto my-5 md:float-left md:max-h-[50vh] md:mr-10 shadow-lg rounded-lg shadow-slate-400">
 
+# À Propos
+
 ## Ma Mission
 
-Je suis Jean-Philippe Lejeune, un consultant passionné par l’alliance entre la finance et le développement logiciel. Ma mission est d'aider les entreprises à prendre des décisions éclairées par les données, en combinant mon expertise en finance quantitative et solutions techniques. Que vous soyez une startup en quête de direction ou une PME cherchant à affiner sa stratégie, je propose des solutions sur mesure pour vous aider à croître et réussir.
+J’aide à combler le fossé entre la finance et la technologie. Après des années de consultation, j’ai constaté que des professionnels talentueux peinent parfois à atteindre leurs objectifs simplement parce qu’ils ne parlent pas le même langage. Ma mission est de les aider avec des solutions basées sur les données, qui alignent leurs expertises.
 
-## Expérience & Parcours
+## Expérience et Parcours
 
-Titulaire d’un master en finance et d'une charte CFA, j’apporte des années d’expérience en finance, analyse de données et gestion de produit. J’ai travaillé avec des startups, PME et grandes institutions financières, dirigeant des équipes et apportant des résultats concrets.
-
-Collaborons pour transformer vos défis en opportunités stratégiques.
+Avec un master en finance, le titre CFA, et plus de dix ans d’expérience dans le secteur, j’apporte une expertise pratique acquise au sein de startups et d’institutions financières. Mon travail couvre l’analyse financière, l’architecture logicielle, et la gestion de projets, me permettant d’aborder des défis complexes avec précision et perspicacité.
