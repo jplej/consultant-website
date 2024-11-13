@@ -2,7 +2,7 @@
 layout: landing
 group: home
 title: Home
-page_heading: We provide digital transformation services to help finance professionals improve their performance
+page_heading: Digital Transformation Services for Finance Professionals
 image: /assets/images/consulting-1920.jpg
 permalink: "/"
 lang: en
