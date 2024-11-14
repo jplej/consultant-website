@@ -9,6 +9,8 @@ h1 {
   font-weight: 600;
   margin-bottom: 30px;
   line-height: 1.2;
+  font-family: "Oswald";
+
   @media(min-width:768px){
     font-size: 3rem;
   }
@@ -23,6 +25,7 @@ h2 {
   font-weight: 500;
   margin-bottom: 30px;
   line-height: 1.1;
+  font-family: "Oswald";
   @media(min-width:1024px){
     font-size: 2.5rem;
   }
@@ -36,11 +39,13 @@ h3 {
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 20px;
+  font-family: "Oswald";
 }
 
 body .page-content {
   h1,h2,h3 {
   line-height: 1.1;
+  font-family: "Oswald";
 }
 }
 
@@ -48,6 +53,7 @@ p {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 20px;
+  font-family: "Roboto";
 }
 
 .landing-block {
