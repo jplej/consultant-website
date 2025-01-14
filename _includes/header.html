@@ -1,9 +1,11 @@
 <header class="page_header fixed top-0 py-3 px-5 bg-BgDark-primary text-textOnDark-primary w-full z-10">
   <div class="nav_wrapper md:flex gap-5 items-center justify-between max-w-7xl mx-auto">
     
-    <!-- Site Branding (Title or Logo) -->
-    <div class="site-branding py-1 px-4 w-fit">
-      <a class="site-title font-bold uppercase text-xl text-accent-main hover:text-accent-highlight transition-colors duration-300" rel="author" href="{{ "/" | relative_url }}">{{ site.data.l10n.title | escape }}</a>
+    <div class="site-branding py-1 px-4 w-fit flex items-center">
+      <a class="site-title font-bold uppercase text-xl text-accent-main hover:text-accent-highlight transition-colors duration-300 flex items-center" rel="author" href="{{ "/" | relative_url }}">
+        <img src="/assets/firm_logo/dark.png" alt="{{ site.data.l10n.title }}" class="h-8 mr-2">
+        {{ site.data.l10n.title | escape }}
+      </a>
     </div>
 
 

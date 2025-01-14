@@ -1,4 +1,4 @@
-title: Services
+title: 
 items:
 - title: Initial Assessment
   description: Comprehensive evaluation with workshops, interviews, and analysis to provide a report, a vision and a roadmap roadmap firm.
@@ -7,5 +7,5 @@ items:
   description: Creation and maintenance of compliant, scalable data lakes and databases with machine learning integration and proactive monitoring.
   icon: "fa fa-database" 
 - title: Business Intelligence
-  description: Development of data platforms and dashboards for real-time insights, automated workflows, and optimized decision-making.
   icon: "fa fa-bar-chart" 
+  description: Development of data platforms and dashboards for real-time insights, automated workflows, and optimized decision-making.
