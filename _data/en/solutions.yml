@@ -3,9 +3,10 @@ items:
     icon: "fa fa-gem"
     color: "accent-main"
     text: >
-      Legacy systems are fragile and prone to errors. Our financial expertise
-      enables us to implement quality assurance practices that reduce validation time 
-      by 90%, ensuring resilience and minimizing costly mistakes.
+      Excel files are fragile, error-prone, and ineffective for managing Big Data.
+      With our financial expertise, we help you build robust systems that ensure 
+      consistent returns and adapt swiftly when your thesis no longer align 
+      with reality.
 
   - name: Better
     icon: "fa fa-gear"
