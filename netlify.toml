@@ -1,0 +1,7 @@
+[build]
+  command = "pip install -r requirements.txt && npm install && npm run css:build && python freeze.py"
+  publish = "build"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+  NODE_VERSION = "20"

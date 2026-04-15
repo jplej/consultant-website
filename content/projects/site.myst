@@ -1,0 +1,14 @@
+---
+title: this site
+summary: Flask + Frozen-Flask + Tailwind, deployed to Netlify. Markdown in git.
+status: shipped
+stack: Flask, Jinja, Tailwind, Frozen-Flask, htmx
+repo: https://github.com/jplr/consultant-website
+---
+
+A static site generator I wrote for myself because every off-the-shelf one
+wanted to add a feature I didn't want. Flask routes render Jinja templates
+over markdown content. Frozen-Flask spits out HTML. Netlify serves it.
+
+No CMS. No database. No analytics. The content lives in `content/` as
+markdown files. To publish, I write a file and push.

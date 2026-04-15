@@ -1,0 +1,17 @@
+{% set links = [
+  ('/feed.xml',                 'lucide:rss',            'RSS'),
+  ('mailto:' ~ author_email,    'lucide:mail',           'Email'),
+  ('https://github.com/',       'simple-icons:github',   'GitHub'),
+  ('https://www.linkedin.com/', 'simple-icons:linkedin', 'LinkedIn'),
+] %}
+<footer class="mx-auto max-w-prose px-6 mt-32 mb-12">
+  <div class="h-10 flex items-stretch justify-center bg-rule/60 border-t border-accent px-3">
+    <nav class="flex items-stretch">
+      {% for href, icon, label in links %}
+        <a href="{{ href }}" aria-label="{{ label }}" title="{{ label }}" class="flex items-center px-3 text-muted hover:text-action">
+          <iconify-icon icon="{{ icon }}" width="20" height="20" stroke-width="2.25"></iconify-icon>
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+</footer>

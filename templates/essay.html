@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ doc.meta.title }} — {{ site_name }}{% endblock %}
+{% block content %}
+<div class="pt-10">
+  <p class="text-meta mb-3">
+    {{ doc.meta.date.strftime('%B %-d, %Y') if doc.meta.date else '' }}
+  </p>
+  <h1 class="text-display mb-10">{{ doc.meta.title }}</h1>
+
+  <article class="prose font-serif">
+    {{ doc.html|safe }}
+  </article>
+</div>
+
+{% if related %}
+<aside class="mt-20 pt-6 border-t border-rule">
+  <p class="text-meta mb-3">Read next</p>
+  <ul class="space-y-1">
+    {% for r in related %}
+      <li><a href="/{{ r.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">{{ r.meta.title }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endif %}
+{% endblock %}

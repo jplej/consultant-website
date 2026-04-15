@@ -1,0 +1,5 @@
+[project]
+name = "consultant-website"
+version = "0.1.0"
+description = "Astus CG consulting website"
+requires-python = ">=3.11"

@@ -1,0 +1,15 @@
+---
+title: homelab
+summary: Always-on mini PC running the docker stack that replaces my SaaS dependencies.
+status: active
+stack: Ubuntu, Tailscale, Syncthing, Docker, chezmoi
+repo: https://github.com/jplr/homelab
+---
+
+A mini PC in the office runs Jellyfin, the *arr stack, Paperless-ngx,
+Syncthing, and the things that come next. Tailscale meshes it with the
+laptops and phone. Chezmoi keeps every machine identical. Mullvad routes the
+traffic that should be routed.
+
+The point is not the homelab. The point is that no quarterly subscription
+can take it away.

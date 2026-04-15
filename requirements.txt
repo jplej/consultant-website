@@ -1,0 +1,6 @@
+Flask>=3.0
+Frozen-Flask>=1.0
+myst-parser>=4.0
+docutils>=0.21
+python-frontmatter>=1.1
+Pygments>=2.18

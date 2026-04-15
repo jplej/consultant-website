@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="pt-10">
+  {% for year, items in grouped %}
+    <h2 class="text-meta mt-12 mb-4 flex items-center gap-3">
+      <span>{{ year }}</span>
+      <span class="h-px flex-1 bg-rule"></span>
+    </h2>
+    <ul class="space-y-2">
+      {% for e in items %}
+        <li class="flex gap-6 items-baseline">
+          <time class="text-meta w-20 shrink-0 tabular-nums">
+            {{ e.meta.date.strftime('%b %d') if e.meta.date else '' }}
+          </time>
+          <a href="/{{ e.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">
+            {{ e.meta.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  {% if not grouped %}
+    <p class="text-muted">Nothing yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

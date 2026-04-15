@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ doc.meta.title }} — {{ site_name }}{% endblock %}
+{% block content %}
+{% set status = doc.meta.status or 'shipped' %}
+<div class="pt-10">
+  <p class="text-meta mb-3">Project · {{ status }}</p>
+  <h1 class="text-display mb-3">{{ doc.meta.title }}</h1>
+  {% if doc.meta.summary %}
+    <p class="text-muted mb-8">{{ doc.meta.summary }}</p>
+  {% endif %}
+
+  <dl class="grid grid-cols-[6rem_1fr] gap-y-1 my-8">
+    {% if doc.meta.stack %}
+      <dt class="text-meta flex items-center">Stack</dt><dd class="text-ink">{{ doc.meta.stack }}</dd>
+    {% endif %}
+    {% if doc.meta.repo %}
+      <dt class="text-meta flex items-center">Repo</dt><dd><a href="{{ doc.meta.repo }}" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">{{ doc.meta.repo }}</a></dd>
+    {% endif %}
+    {% if doc.meta.demo %}
+      <dt class="text-meta flex items-center">Demo</dt><dd><a href="{{ doc.meta.demo }}" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">{{ doc.meta.demo }}</a></dd>
+    {% endif %}
+  </dl>
+
+  <article class="prose font-serif">
+    {{ doc.html|safe }}
+  </article>
+</div>
+{% endblock %}

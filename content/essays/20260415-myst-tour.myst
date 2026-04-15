@@ -1,0 +1,89 @@
+---
+title: A tour of MyST
+date: 2026-04-15
+summary: What this stack can do when Markdown is not enough.
+---
+
+Plain Markdown carries an essay until the essay needs a sidenote, a cross-reference,
+or a figure with a caption. MyST picks up from there: a superset of CommonMark
+with a directive and role system borrowed from reStructuredText.
+
+## Admonitions
+
+:::{note}
+Admonitions are directives. The fence syntax uses three colons so the inside
+stays plain Markdown — no indentation gymnastics.
+:::
+
+:::{warning}
+Use them sparingly. A page of yellow boxes reads like a compliance manual.
+:::
+
+## Figures with captions
+
+:::{figure} /static/img/minard.png
+:alt: Minard's figurative map of Napoleon's 1812 Russian campaign
+:align: center
+
+Charles Joseph Minard, *Carte figurative des pertes successives en hommes de
+l'Armée Française dans la campagne de Russie 1812–1813*. Six variables on a
+single sheet — the canonical argument for information density.
+:::
+
+## Footnotes
+
+Tufte's essays carry their apparatus in the margin[^tufte]. MyST keeps them
+at the foot of the page, which is closer to how the web wants to render them.
+
+[^tufte]: Edward Tufte, *The Visual Display of Quantitative Information*, 1983.
+
+## Definition lists
+
+Signal
+: Something that changes the reader's model of the world.
+
+Noise
+: Everything else.
+
+## Tables
+
+| Format   | Directives | Roles | Ecosystem       |
+| -------- | :--------: | :---: | --------------- |
+| CommonMark |     —     |   —   | universal       |
+| MyST     |     ✓      |   ✓   | Sphinx, JupyterBook |
+| RST      |     ✓      |   ✓   | Python docs     |
+
+## Math
+
+Inline math like $E = mc^2$ drops into a sentence. Display math stands on its own:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$
+
+## Task lists
+
+- [x] Switch renderer to MyST
+- [x] Rename content files to `.myst`
+- [ ] Wire up bibliography directive
+- [ ] Add a margin-note role for Tufte-style sidenotes
+
+## Attributes on blocks
+
+{.lead}
+A leading paragraph can carry a class and be styled differently without
+HTML escape hatches in the prose.
+
+## Code with language hints
+
+```python
+from myst_parser.parsers.docutils_ import Parser
+from docutils.core import publish_parts
+
+html = publish_parts(source=text, parser=Parser(), writer_name="html5")["html_body"]
+```
+
+## Strikethrough and smart punctuation
+
+~~Markdown is enough~~ — until it isn't. "Curly quotes", em-dashes — and
+ellipses... all come through without extensions fighting each other.
