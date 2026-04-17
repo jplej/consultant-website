@@ -3,7 +3,7 @@
 {% block content %}
 {% set status = doc.meta.status or 'shipped' %}
 <div class="pt-10">
-  <p class="text-meta mb-3">Project · {{ status }}</p>
+  <p class="text-meta mb-3">{{ t.work }} · {{ t[status] }}</p>
   <h1 class="text-display mb-3">{{ doc.meta.title }}</h1>
   {% if doc.meta.summary %}
     <p class="text-muted mb-8">{{ doc.meta.summary }}</p>

@@ -12,7 +12,7 @@
           <time class="text-meta w-20 shrink-0 tabular-nums">
             {{ e.meta.date.strftime('%b %d') if e.meta.date else '' }}
           </time>
-          <a href="/{{ e.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">
+          <a href="/{{ lang }}/{{ e.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">
             {{ e.meta.title }}
           </a>
         </li>
@@ -20,7 +20,7 @@
     </ul>
   {% endfor %}
   {% if not grouped %}
-    <p class="text-muted">Nothing yet.</p>
+    <p class="text-muted">{{ t.nothing_yet }}</p>
   {% endif %}
 </section>
 {% endblock %}

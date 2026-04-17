@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .bar-btn {
+    @apply flex items-center justify-center px-3 text-muted hover:text-action;
+  }
+  .bar-btn.active {
+    @apply bg-action text-paper;
+  }
+}
+
+@layer base {
+  :root {
+    /* Solarized Light */
+    --color-ink:     88 110 117;   /* base01 #586e75 */
+    --color-paper:   253 246 227;  /* base3  #fdf6e3 */
+    --color-rule:    238 232 213;  /* base2  #eee8d5 */
+    --color-muted:   147 161 161;  /* base1  #93a1a1 */
+    --color-codeBg:  238 232 213;  /* base2  #eee8d5 */
+    --color-preBg:   0 43 54;     /* base03 #002b36 */
+    --color-preFg:   147 161 161;  /* base1  #93a1a1 */
+  }
+
+  .dark {
+    --color-ink:     147 161 161;  /* base1  #93a1a1 */
+    --color-paper:   0 43 54;     /* base03 #002b36 */
+    --color-rule:    7 54 66;     /* base02 #073642 */
+    --color-muted:   88 110 117;  /* base01 #586e75 */
+    --color-codeBg:  7 54 66;     /* base02 #073642 */
+    --color-preBg:   238 232 213;  /* base2  #eee8d5 */
+    --color-preFg:   88 110 117;  /* base01 #586e75 */
+  }
+}

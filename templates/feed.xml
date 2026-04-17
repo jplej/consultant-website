@@ -2,14 +2,14 @@
 <rss version="2.0">
   <channel>
     <title>{{ site_name }}</title>
-    <link>{{ site_url }}</link>
+    <link>{{ site_url }}/{{ lang }}/</link>
     <description>Essays.</description>
     <lastBuildDate>{{ now.strftime('%a, %d %b %Y %H:%M:%S +0000') }}</lastBuildDate>
     {% for e in essays %}
     <item>
       <title>{{ e.meta.title }}</title>
-      <link>{{ site_url }}/{{ e.slug }}/</link>
-      <guid>{{ site_url }}/{{ e.slug }}/</guid>
+      <link>{{ site_url }}/{{ lang }}/{{ e.slug }}/</link>
+      <guid>{{ site_url }}/{{ lang }}/{{ e.slug }}/</guid>
       {% if e.meta.date %}<pubDate>{{ e.meta.date.strftime('%a, %d %b %Y 00:00:00 +0000') }}</pubDate>{% endif %}
       <description><![CDATA[{{ e.html|safe }}]]></description>
     </item>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Not found — {{ site_name }}{% endblock %}
+{% block title %}{{ t.not_found }} — {{ site_name }}{% endblock %}
 {% block content %}
 <section class="pt-10">
-  <p class="text-muted">Not found. <a href="/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">Back home</a>.</p>
+  <p class="text-muted">{{ t.not_found }} <a href="/{{ lang }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">{{ t.back_home }}</a>.</p>
 </section>
 {% endblock %}

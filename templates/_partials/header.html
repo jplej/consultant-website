@@ -1,13 +1,14 @@
 {% set path = request.path %}
+{% set prefix = '/' ~ lang %}
 {% set nav = [
-  ('/',       'lucide:pen-line',  'Writing', path not in ['/about/'] and not path.startswith('/work')),
-  ('/work/',  'lucide:briefcase', 'Work',    path.startswith('/work')),
-  ('/about/', 'lucide:user',      'About',   path == '/about/'),
+  (prefix ~ '/',       'lucide:pen-line',  t.writing, path == prefix ~ '/' or (path.startswith(prefix ~ '/') and '/work' not in path and path != prefix ~ '/about/')),
+  (prefix ~ '/work/',  'lucide:briefcase', t.work,    '/work' in path),
+  (prefix ~ '/about/', 'lucide:user',      t.about,   path == prefix ~ '/about/'),
 ] %}
 <header class="mx-auto max-w-prose px-6">
-  <div class="h-10 flex items-stretch justify-between bg-rule/60 border-b border-accent px-3">
+  <div class="h-10 grid grid-cols-[1fr_auto_1fr] items-stretch bg-rule/60 border-b border-accent px-3">
 
-    <a href="/" class="flex items-center gap-2 text-ink">
+    <a href="{{ prefix }}/" class="flex items-center gap-2 text-ink justify-self-start">
       <span aria-hidden="true" class="h-8 w-8 inline-block bg-brand"
             style="-webkit-mask:url(/static/img/astus-light.png) center/contain no-repeat;
                           mask:url(/static/img/astus-light.png) center/contain no-repeat;"></span>
@@ -16,17 +17,26 @@
 
     <nav class="flex items-stretch gap-1">
       {% for href, icon, label, active in nav %}
-        {% if active %}
-          <a href="{{ href }}" aria-label="{{ label }}" title="{{ label }}" class="flex items-center px-3 bg-action text-paper">
-            <iconify-icon icon="{{ icon }}" width="20" height="20" stroke-width="2.25"></iconify-icon>
-          </a>
-        {% else %}
-          <a href="{{ href }}" aria-label="{{ label }}" title="{{ label }}" class="flex items-center px-3 text-muted hover:text-action">
-            <iconify-icon icon="{{ icon }}" width="20" height="20" stroke-width="2.25"></iconify-icon>
-          </a>
-        {% endif %}
+        <a href="{{ href }}" aria-label="{{ label }}" title="{{ label }}"
+           class="bar-btn{{ ' active' if active }}">
+          <iconify-icon icon="{{ icon }}" width="20" height="20" stroke-width="2.25"></iconify-icon>
+        </a>
       {% endfor %}
     </nav>
+
+    <div class="flex items-stretch justify-self-end">
+      <a href="{{ request.path|replace('/' ~ lang ~ '/', '/' ~ other_lang ~ '/') }}"
+         aria-label="{{ other_lang|upper }}" title="{{ other_lang|upper }}"
+         class="bar-btn font-sans text-xs font-bold uppercase tracking-widest">
+        {{ other_lang|upper }}
+      </a>
+
+      <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"
+              class="bar-btn">
+        <iconify-icon icon="lucide:sun" width="20" height="20" stroke-width="2.25" class="hidden dark:block"></iconify-icon>
+        <iconify-icon icon="lucide:moon" width="20" height="20" stroke-width="2.25" class="block dark:hidden"></iconify-icon>
+      </button>
+    </div>
 
   </div>
 </header>

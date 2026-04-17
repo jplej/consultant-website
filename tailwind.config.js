@@ -18,14 +18,29 @@ const tones = {
 };
 
 // Semantic roles -- this is what templates use. Remap freely.
-const palette = {
-  // surfaces & text
-  ink:     tones.base01,   // emphasized body text
-  paper:   tones.base3,    // page background
-  rule:    tones.base2,    // dividers, subtle fills
-  muted:   tones.base1,    // secondary content
+// Theme-switching tokens use CSS custom properties (defined in input.css).
+// withOpacityValue lets Tailwind inject the alpha for utility classes (bg-ink/50)
+// while theme() calls in the typography plugin get a plain rgb() fallback.
+function withOpacityValue(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgb(var(${variable}) / ${opacityValue})`;
+    }
+    return `rgb(var(${variable}))`;
+  };
+}
 
-  // interactive roles
+const palette = {
+  // surfaces & text (switch with dark mode)
+  ink:     withOpacityValue('--color-ink'),
+  paper:   withOpacityValue('--color-paper'),
+  rule:    withOpacityValue('--color-rule'),
+  muted:   withOpacityValue('--color-muted'),
+  codeBg:  withOpacityValue('--color-codeBg'),
+  preBg:   withOpacityValue('--color-preBg'),
+  preFg:   withOpacityValue('--color-preFg'),
+
+  // interactive roles (same in both modes)
   action:  tones.blue,     // links, primary CTAs
   accent:  tones.yellow,   // active nav segment, statusline highlight
   brand:   tones.orange,   // logo tint, identity mark
@@ -35,11 +50,6 @@ const palette = {
   warning: tones.yellow,
   danger:  tones.red,
   info:    tones.cyan,
-
-  // code surfaces
-  codeBg:  tones.base2,
-  preBg:   tones.base03,
-  preFg:   tones.base1,
 };
 
 const fonts = {
@@ -55,6 +65,7 @@ const base = {
 };
 
 module.exports = {
+  darkMode: 'class',
   content: [
     "./templates/**/*.html",
     "./content/**/*.md",
@@ -128,8 +139,8 @@ module.exports = {
     plugin(function({ addBase, addComponents, theme }) {
       addBase({
         'html': {
-          backgroundColor: theme('colors.paper'),
-          color:           theme('colors.ink'),
+          backgroundColor: 'rgb(var(--color-paper))',
+          color:           'rgb(var(--color-ink))',
           fontFamily:      fonts.serif.join(','),
           fontSize:        base.fontSize,
           lineHeight:      base.lineHeight,

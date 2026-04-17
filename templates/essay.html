@@ -14,10 +14,10 @@
 
 {% if related %}
 <aside class="mt-20 pt-6 border-t border-rule">
-  <p class="text-meta mb-3">Read next</p>
+  <p class="text-meta mb-3">{{ t.read_next }}</p>
   <ul class="space-y-1">
     {% for r in related %}
-      <li><a href="/{{ r.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">{{ r.meta.title }}</a></li>
+      <li><a href="/{{ lang }}/{{ r.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">{{ r.meta.title }}</a></li>
     {% endfor %}
   </ul>
 </aside>
