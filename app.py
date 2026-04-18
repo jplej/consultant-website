@@ -13,7 +13,7 @@ from i18n import DEFAULT_LANG, LANGS, STRINGS, other
 
 CONTENT = Path(__file__).parent / "content"
 SITE_NAME = "Astus"
-SITE_URL = "https://example.com"
+SITE_URL = "https://astuscg.com"
 AUTHOR_EMAIL = "jp@astuscg.com"
 
 MYST_EXTENSIONS = [
@@ -133,20 +133,74 @@ def feed(lang):
     return Response(xml, mimetype="application/xml")
 
 
+@app.route("/sitemap.xml")
+def sitemap():
+    urls = []
+    for lang in LANGS:
+        urls.append(url_for("index", lang=lang))
+        urls.append(url_for("work_index", lang=lang))
+        urls.append(url_for("feed", lang=lang))
+        for folder in ("essays", "pages"):
+            for p in (CONTENT / lang / folder).glob("*.myst"):
+                urls.append(url_for("essay", lang=lang, slug=p.stem))
+        for p in (CONTENT / lang / "projects").glob("*.myst"):
+            urls.append(url_for("project", lang=lang, slug=p.stem))
+    xml = render_template("sitemap.xml", urls=urls, site_url=SITE_URL)
+    return Response(xml, mimetype="application/xml")
+
+
+@app.route("/robots.txt")
+def robots():
+    body = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
+    return Response(body, mimetype="text/plain")
+
+
 @app.errorhandler(404)
 def not_found(_):
     return render_template("404.html"), 404
 
 
+def _alternate_url(lang: str, endpoint: str | None, view_args: dict | None) -> str | None:
+    if endpoint in (None, "root", "sitemap", "robots"):
+        return None
+    view_args = view_args or {}
+    if endpoint in ("index", "work_index", "feed"):
+        return url_for(endpoint, lang=lang)
+    slug = view_args.get("slug")
+    if not slug:
+        return None
+    if endpoint == "essay":
+        if (CONTENT / lang / "essays" / f"{slug}.myst").exists():
+            return url_for("essay", lang=lang, slug=slug)
+        if (CONTENT / lang / "pages" / f"{slug}.myst").exists():
+            return url_for("essay", lang=lang, slug=slug)
+        return None
+    if endpoint == "project":
+        if (CONTENT / lang / "projects" / f"{slug}.myst").exists():
+            return url_for("project", lang=lang, slug=slug)
+    return None
+
+
 @app.context_processor
 def inject_globals():
     lang = (request.view_args or {}).get("lang", DEFAULT_LANG)
+    endpoint = request.endpoint
+    view_args = request.view_args
+    alternates = {}
+    for l in LANGS:
+        alt = _alternate_url(l, endpoint, view_args)
+        if alt:
+            alternates[l] = alt
+    canonical = SITE_URL + request.path if endpoint else None
     return {
         "site_name": SITE_NAME,
         "author_email": AUTHOR_EMAIL,
+        "site_url": SITE_URL,
         "lang": lang,
         "other_lang": other(lang),
         "t": STRINGS[lang],
+        "alternates": alternates,
+        "canonical_url": canonical,
     }
 
 

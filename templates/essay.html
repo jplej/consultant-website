@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ doc.meta.title }} — {{ site_name }}{% endblock %}
+{% if doc.meta.summary %}{% block description %}{{ doc.meta.summary }}{% endblock %}{% endif %}
+{% block og_type %}article{% endblock %}
 {% block content %}
 <div class="pt-10">
   <p class="text-meta mb-3">
