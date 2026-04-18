@@ -1,0 +1,31 @@
+---
+title: How Power Shapes Your Codebase
+date: 2025-11-01
+summary: Most weird system choices make sense once you see the incentives behind them.
+---
+
+The codebase is written by everyone. The org chart is written by management. When the two disagree, the codebase wins, because the codebase is what runs the firm.
+
+## A Good but Wrong Idea
+
+Years ago I joined a firm where the IT director told me, in my first month, that there was nothing that couldn't be done in SQL — including regression. No Python, no R, no source control. I argued. The tech stack was thirty years old. I was right and he was wrong, and it did not matter. The firm had been an SQL-only shop for over a decade. Every department I appealed to told me the same thing: change costs more than the project is worth, learn the constraint, move on. After two weeks of arguing, my boss took me into a small meeting room and told me to drop it.
+
+I understood years later. What I read as ignorance was a position. The IT director was a former DBA who had been promoted because management was quietly preparing to sell the firm, and any infrastructure investment would have shown up as a depreciating asset on the balance sheet. The codebase was preserving optionality for a transaction nobody had told me about. The decision wasn't bad architecture. It was good politics encoded as bad architecture.
+
+## The Strong Do What They Can, and the Weak Endure Their Suffering
+
+Many infrastructure choices aren't deliberate decisions, they're accidents of history. SQL dominated that firm because of path dependency, not strategy. As a spin-off renting infrastructure from a parent institution, SQL databases were simply what was available. The early developers weren't choosing SQL to solve a problem; they were actual Database Administrators continuing what they'd always done. Pandas didn't exist yet, Python was a novelty, and nobody questioned the status quo. The infrastructure wasn't designed; it evolved from circumstance.
+
+Some of these constraints can be lifted with the right business case. If a firm is blocked by vendor contracts, outdated tooling, or unnecessary architectural choices, modern solutions (cloud, APIs, containerization) often dissolve the problem at a tenth of the historical cost. Management may not even realize the problem is solvable. But other constraints are immovable: legal requirements mandating specific jurisdictions, compliance rules enforcing certain architectures, a transaction in preparation that cannot tolerate balance-sheet noise. This is what Martin Fowler calls prudent technical debt: a conscious choice given real constraints. Pushing against operational reality wastes political capital. The work is knowing which kind of constraint you are facing.
+
+## The Org Chart is Your Architecture
+
+Later that year, I learned about the sale that had been quietly prepared for months. To make the business attractive, management had slashed expenses, including "IT innovation." The DBA had become IT director not because anyone valued the technology but because it was cheap and represented zero risk. Meanwhile the operations and risk teams — finance professionals with real business needs — could not get database access from the central function. They were not SQL experts but they knew VBA. Over years, they built an entire parallel cash management ecosystem in Excel. Career advancement on those teams meant mastering the tribal system. The firm now had two infrastructures: the official SQL one and the shadow VBA one that actually moved cash.
+
+This is Conway's Law in action. Coined in 1967, it states that organizations design systems mirroring their communication structures. Translation: the codebase IS the business thesis. Always. When a firm splits into cliques with competing interests — different product visions, management conflicts, departments fighting for resources — the architecture fractures accordingly. The VBA cash system existed because of organizational politics: the DBA and management did not care, so someone built the workaround themselves. Years later, that workaround was still there. The org chart had been redrawn three times. The Excel files had not.
+
+## Technically Right vs Politically Correct
+
+The IT director wasn't stupid, and I wasn't wrong. We were playing different games. He represented the political reality of a firm preparing for sale; I was optimizing for technical elegance in a vacuum. The codebase encoded both positions, and only one of us understood the institution.
+
+Conway's Law isn't a metaphor. It is what survives every reorganization, every leadership change, every story management tells about itself. Power shapes the codebase more reliably than design patterns ever do.

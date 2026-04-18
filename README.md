@@ -1,83 +1,97 @@
 # consultant-website
 
-Flask + Jinja + htmx + Tailwind (with `@tailwindcss/typography`), built to a static site via Frozen-Flask and deployed on Netlify.
+Flask + MyST essayist site, frozen to static HTML via Frozen-Flask and deployed on Netlify.
 
 ## Stack
 
 - **Flask** routes + Jinja templates
-- **Markdown** content in `content/` with YAML frontmatter (`python-frontmatter`)
-- **Tailwind CSS** + **@tailwindcss/typography** for prose styling
-- **htmx** for progressive interactivity
-- **Frozen-Flask** to generate static HTML into `build/`
-- **Netlify** hosts the static output
+- **MyST Markdown** content (`.myst`) with YAML frontmatter, parsed via `myst-parser` + `docutils`
+- **Tailwind CSS** + `@tailwindcss/typography` for prose styling
+- **Frozen-Flask** generates static HTML into `build/`
+- **Netlify** builds and serves the static output
 
 ## Layout
 
 ```
-app.py                 Flask routes
-freeze.py              Static site generator (Frozen-Flask)
+app.py                 Flask routes + MyST rendering
+i18n.py                Languages, default, UI strings
+freeze.py              Frozen-Flask generators
 content/
-  pages/               About, Contact, etc. (*.md)
-  services/            Service detail pages (*.md)
+  en/, fr/
+    essays/*.myst      Date-sorted essays
+    projects/*.myst    Projects (status: active/shipped/archived)
+    pages/*.myst       Standalone pages (about, etc.)
 templates/
-  base.html            Shell (header/footer, CSS, htmx)
-  index.html           Landing
-  page.html            Generic markdown page
-  service.html         Service detail
+  base.html            Shell
+  index.html           Essays index
+  essay.html           Essay detail
+  page.html            Standalone page
+  work_index.html      Projects index
+  project.html         Project detail
+  feed.xml             Atom feed
   404.html
-  _partials/           header.html, footer.html
+  _partials/           Shared chunks
 static/
   css/input.css        Tailwind entry
   css/site.css         Built (gitignored)
+  img/, favicon.ico
 netlify.toml           Build config
-tailwind.config.js
-package.json           tailwind + typography
+tailwind.config.js     Semantic color tokens (Solarized light)
+run-it.sh              Dev launcher
+package.json           Tailwind deps
 requirements.txt       Python deps
+pyproject.toml         Python project metadata
 ```
+
+Requires Python 3.11+ (via `uv`) and Node 20+.
 
 ## Dev
 
 ```bash
-uv venv && source .venv/bin/activate
-uv pip install -r requirements.txt
-npm install
-
-# One command: Flask (debug) + Tailwind watch + live reload
-LIVETW_ENV=development livetw dev
+bash run-it.sh
+# Flask (debug) + Tailwind (watch), site at http://127.0.0.1:5000
 ```
 
-Visit the URL printed in the terminal. Edits to `.py`, templates, Markdown, or Tailwind classes hot-reload the browser; CSS swaps without a full page refresh.
+`run-it.sh` creates `.venv`, installs Python and Node deps, then runs Tailwind in watch mode alongside the Flask dev server.
 
 ## Build (static)
 
 ```bash
-npm run css:build
-python freeze.py
-# output: build/
+npm run css:build && python freeze.py
+# Output: build/
 ```
 
 ## Content
 
-Drop `*.md` files into `content/pages/` or `content/services/` with frontmatter:
+Drop `.myst` files into `content/<lang>/{essays,projects,pages}/` with YAML frontmatter:
 
 ```markdown
 ---
-title: Strategy
-summary: Short description for cards and SEO.
+title: On distribution
+date: 2026-03-27
 ---
 
-Body in Markdown.
+Body in MyST Markdown.
 ```
 
-Routes:
-- `/` — landing (lists all services)
-- `/<slug>/` — any file under `content/pages/`
-- `/services/<slug>/` — any file under `content/services/`
+Frontmatter requirements:
+- **Essays** — `title`, `date` (YYYY-MM-DD)
+- **Projects** — `title`, `status` (`active` | `shipped` | `archived`)
+- **Pages** — `title`
+
+## Routes
+
+- `/` — redirects to the default language (`en`)
+- `/<lang>/` — essays index (grouped by year)
+- `/<lang>/<slug>/` — essay; falls through to a page if no essay matches
+- `/<lang>/work/` — projects index (sorted by status)
+- `/<lang>/work/<slug>/` — project detail
+- `/<lang>/feed.xml` — Atom feed
+
+## i18n
+
+Two languages: `en` (default) and `fr`. Declared in `i18n.py` alongside UI strings. Add a language by extending `LANGS` and `STRINGS`, then mirror the `content/<lang>/` tree.
 
 ## Deploy
 
-Netlify is wired to the `main` branch via the GitHub app. `netlify.toml` installs Python + Node deps, builds Tailwind, freezes the site, and publishes `build/`.
-
-## i18n (later)
-
-English only for now. Plan: URL prefix scheme (`/en/...`, `/fr/...`) via a simple locale-aware route factory when French content is added.
+Netlify is wired to the `main` branch. `netlify.toml` installs Python + Node deps, builds Tailwind, freezes the site, and publishes `build/`.

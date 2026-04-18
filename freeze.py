@@ -26,6 +26,12 @@ def essay():
 
 
 @freezer.register_generator
+def work_index():
+    for lang in LANGS:
+        yield {"lang": lang}
+
+
+@freezer.register_generator
 def project():
     for lang in LANGS:
         for p in (CONTENT / lang / "projects").glob("*.myst"):

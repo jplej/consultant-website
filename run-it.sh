@@ -27,7 +27,7 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 echo "→ Starting Tailwind (watch) + Flask (debug) — one terminal"
-npx tailwindcss -i static/css/input.css -o static/css/site.css --watch &
+npx tailwindcss -i static/css/input.css -o static/css/site.css --watch=always &
 
 export FLASK_APP=app.py
 flask run --debug

@@ -22,12 +22,15 @@ Flask + MyST essayist site, frozen to static HTML via Frozen-Flask, deployed on 
 
 **Content pipeline:** MyST Markdown files (`.myst`) with YAML frontmatter in `content/` are parsed at request time by `app.py` using `myst-parser` + `docutils`, rendered to HTML, and injected into Jinja templates.
 
-**Content types and routes:**
-- `content/essays/*.myst` — date-sorted essays. Index at `/`, detail at `/<slug>/`
-- `content/projects/*.myst` — projects sorted by `status` (active/shipped/archived). Index at `/work/`, detail at `/work/<slug>/`
-- `content/pages/*.myst` — standalone pages (about, etc.) served at `/<slug>/` as a fallback after essays
+**i18n:** All URLs are language-prefixed (`/<lang>/...`). Languages (`en`, `fr`), default, and UI strings live in `i18n.py`. `/` redirects to the default language. Content is mirrored under `content/<lang>/`.
 
-The `essay` route handler tries essays first, then falls through to pages — both share the `/<slug>/` URL pattern.
+**Content types and routes:**
+- `content/<lang>/essays/*.myst` — date-sorted essays. Index at `/<lang>/`, detail at `/<lang>/<slug>/`
+- `content/<lang>/projects/*.myst` — projects sorted by `status` (active/shipped/archived). Index at `/<lang>/work/`, detail at `/<lang>/work/<slug>/`
+- `content/<lang>/pages/*.myst` — standalone pages (about, etc.) served at `/<lang>/<slug>/` as a fallback after essays
+- `/<lang>/feed.xml` — Atom feed of essays
+
+The `essay` route handler tries essays first, then falls through to pages — both share the `/<lang>/<slug>/` URL pattern.
 
 **Styling:** Tailwind CSS with Solarized light color palette defined as semantic roles in `tailwind.config.js` (ink, paper, rule, action, accent, brand, etc.). Uses `@tailwindcss/typography` for prose. Fonts: Source Serif 4 (body), Inter (meta/UI), JetBrains Mono (code).
 

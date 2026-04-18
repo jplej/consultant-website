@@ -2,10 +2,17 @@
 title: About
 ---
 
-I'm Jean-Philippe Lejeune. I write about finance, institutions, and the
-architecture of independent intellectual work. I build systems on the side ---
-mostly small, self-hosted, plain-text.
+:::{image} /static/img/jplej.jpg
+:alt: Jean-Philippe Lejeune
+:align: center
+:width: 320px
+:class: rounded-lg
+:::
 
-If something I wrote is useful or wrong, [say so](mailto:jp@astuscg.com). I
-read every email. I do not have a newsletter. The [RSS feed](/feed.xml) is
-the subscription.
+I'm Jean-Philippe Lejeune. I work at Nymbus Capital as a quant developer
+and assistant portfolio manager.
+
+I write here about finance, institutions, and the systems they run on —
+mostly about what the industry tells itself when it isn't looking.
+
+If something's useful or wrong, links below.
