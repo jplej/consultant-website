@@ -10,6 +10,7 @@ from myst_parser.parsers.docutils_ import Parser as MystParser
 from werkzeug.routing import BaseConverter
 
 from i18n import DEFAULT_LANG, LANGS, STRINGS, other
+from mermaid import render_mermaid_blocks
 
 CONTENT = Path(__file__).parent / "content"
 SITE_NAME = "Astus"
@@ -60,7 +61,7 @@ def _coerce_date(value):
 
 def load_doc(path: Path):
     post = frontmatter.loads(path.read_text(encoding="utf-8"))
-    html = render_myst(post.content)
+    html = render_myst(render_mermaid_blocks(post.content))
     meta = dict(post.metadata)
     if "date" in meta:
         meta["date"] = _coerce_date(meta["date"])

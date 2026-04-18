@@ -1,0 +1,34 @@
+---
+title: Testing Mermaid
+date: 2026-04-18
+summary: Verifying the Kroki build-time pipeline for Mermaid diagrams.
+---
+
+A flowchart:
+
+```mermaid
+%% alt: Decision flow for shipping a diagram
+flowchart LR
+  A[Write essay] --> B{Need a diagram?}
+  B -->|yes| C[Write mermaid block]
+  B -->|no| D[Publish]
+  C --> E[Preprocessor hits Kroki]
+  E --> F[SVG cached by hash]
+  F --> D
+```
+
+And a sequence diagram:
+
+```mermaid
+sequenceDiagram
+  participant Author
+  participant Flask
+  participant Kroki
+  Author->>Flask: freeze.py
+  Flask->>Kroki: POST mermaid source
+  Kroki-->>Flask: SVG
+  Flask->>Flask: cache by content hash
+  Flask-->>Author: static HTML + <img>
+```
+
+That's it.
