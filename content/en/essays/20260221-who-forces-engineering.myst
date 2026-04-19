@@ -1,0 +1,85 @@
+---
+title: Who Forces Engineering at a Quant Shop?
+date: 2026-02-21
+summary: Systematic funds have to will engineering culture into existence. Nothing else is going to force it.
+---
+
+> Systematic funds have to will engineering culture into existence. No clock, no regulator, no allocator template, and no operational threshold will force them.
+
+## Pandas Still Follows Him
+
+In 2008, a junior researcher at [AQR](https://www.aqr.com) called Wes McKinney wrote a Python library to handle structured financial data. He borrowed from R's `data.frame`, hacked around NumPy's limits, and called it pandas. 18 years later, his career is a slow public apology. He has conceded his early code was "ugly and slow." He built Badger to fix its columnar problems, co-created Apache Arrow to fix its performance problems, developed Ibis to fix its scaling problems. Most major thing he has shipped since 2008 is a patch on 2008.
+
+The creator cannot escape his own code. Neither can the fund that runs on it. A systematic firm does not inherit a strategy; it inherits a codebase; written in good faith, under deadline pressure, by someone who may already be gone. Engineering discipline is what makes that inheritance survivable. The problem is that nothing is going to make you invest in it.
+
+## Physics, Regulators, and Excel
+
+Every adjacent category of finance has a force that pulls engineering discipline into the firm, whether the firm wants it or not.
+
+In high-frequency trading, it is **physics**. A trade that takes a millisecond longer than the competition is a trade you lose. The clock is an unforgiving external auditor that settles accounts every day. No HFT shop reaches scale without a serious engineering organisation, because the market removes the ones that do not.
+
+In regulated banking, it is **supervision**. [SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm) requires documented model development, independent validation, ongoing monitoring. Basel rules expose capital to model weakness. Internal audit reviews the pipeline. None of this is optional. The bank either builds the engineering function or the regulator builds it for them, through a consent decree.
+
+In traditional asset management, it is **operational scale**. A firm running hundreds of long-only mandates, millions of daily NAVs, thousands of client reports, cannot survive on spreadsheets forever. The usual trajectory is to patch Excel until the patches stop holding, and then sign a seven-figure contract with an investment management system vendor (think Charles River, SimCorp or BlackRock Aladdin). The choice is extortionate engineering or extortionate license fees, but there is a choice, and the operational volume eventually forces it.
+
+Now consider the systematic, non-HFT fund. Holding periods of days to months. Research code that runs slowly is not punished by the clock. No prudential regulator examines the model pipeline. The operational back office uses a proper fund administrator, so the research stack never hits the operational scale that triggers a vendor decision.
+
+> The forcing function is absent by construction.
+
+The engineering has to come from somewhere internal, or it does not come at all.
+
+## What Makes the Papers, What Doesn't
+
+Systematic funds are secretive by nature. Partnership agreements, LP non-disclosure, and the absence of any public reporting obligation mean a code bug rarely reaches the press. The public register of systematic-fund engineering failures is sparse by construction, not by rarity.
+
+AXA Rosenberg is the rare case that surfaced. A line changed in the optimiser in April 2007 disabled a risk-management component. For 26 months the model ran broken, affecting 600 client mandates and compounding $217M in losses. The error was caught in June 2009; a senior official instructed the team to delay the fix. The SEC charged the firm with fraud; Barr Rosenberg himself was banned. It became public only because someone tried to suppress the bug on top of the bug.
+
+Knight Capital is the other. On August 1, 2012, an engineer pushed a new order-routing feature to production. Eight servers needed the update; seven got it. A repurposed flag triggered a deprecated code path still alive on the missed machine. In 45 minutes, Knight generated 4 million unintended executions across 154 stocks. The loss was $440M, nearly four times the prior year's profit. The firm did not survive the year.
+
+The pattern runs through the public institutions too.
+
+JPMorgan lost $6.2B on the London Whale because its Value-at-Risk model lived in Excel and a formula divided by a sum instead of an average.
+
+Citigroup wired $893M to Revlon by mistake, wiped €300B off European indices with a fat-finger trade, and credited a customer account $81T instead of $280.
+
+Each firm had a CTO, independent risk, and federal supervision. None of it was enough.
+
+These are the failures made visible by public status. Everything below the waterline is what the essay is about.
+
+## Between IDD and ODD
+
+The instinctive response from the allocator community is that operational due diligence covers this. It does not. [ILPA's DDQ 2.0](https://ilpa.org/due-diligence-questionnaire/) has 21 sections. Cybersecurity, compliance, business continuity, succession, vendor risk, valuation policies, cyber incident history. Not one section covers research engineering. The template was written by pension and endowment consultants; every DDQ in the industry inherits from it, and managers answer what is asked.
+
+The deeper problem is that no one owns the question. Investment due diligence examines the strategy and assumes the backtest numbers reflect what the code produces. Operational due diligence examines the firm and assumes the code belongs to strategy. The research codebase falls in the gap. This is a **structural property** of how gatekeeping is organised, not a gap that someone forgot to close. Even if ODD wanted to look, it could not. The field is staffed by accountants, lawyers, and ex-compliance officers who can read a SOC 1 report, an ISDA, or a fund administrator's attestation. They do not read Python.
+
+## The Tech Company That Trades
+
+Some firms without a forcing function chose engineering anyway.
+
+[Two Sigma](https://www.twosigma.com) was founded in 2001 as a technology company that happens to trade. 900 of its 1,500 employees are technologists; both of its last two CTOs came from senior technology roles — Alfred Spector from Google Research, Jeff Wecker from Goldman Sachs, where he was the bank's first Chief Data Officer. A dedicated legal entity, Two Sigma Open Source LLC, manages contributions to Jupyter, pandas, Apache Arrow, Parquet, Bazel, and Git. Its flagship strategies run over days and weeks. Nothing about their economics required any of this.
+
+The [D. E. Shaw](https://www.deshaw.com) group runs more than 650 developers and engineers. Its research arm maintains its own computational infrastructure, including Anton, a custom-designed supercomputer for molecular dynamics simulation. The firm's stated posture is that when commercial platforms do not meet its standards, it builds its own. Jeff Bezos was a vice president there before he founded Amazon; the engineering culture predates him.
+
+AQR is the instructive case. AQR's Chief Technology Officer, Steve Mock, has been named to Institutional Investor's Trading Tech 40 three years running. The firm runs a dedicated Quantitative Research Development group whose remit is the infrastructure, tooling, and production orchestration that powers quant research — separate from the research teams who consume it. AQR's strategies hold positions for months to years. Latency is irrelevant to the economics. The engineering function exists anyway.
+
+These firms did not invest in engineering to trade faster. They invested because research compounds only if it is **reproducible**, because knowledge survives turnover only when encoded in versioned code rather than in a researcher's head, because capacity grows only on shared infrastructure, and because a regulator's question gets a defensible answer only when the firm can reconstruct who changed what, and when. None of these require a clock. All of them require a choice.
+
+## Will It, or Wait
+
+Nothing is coming for the codebase. Physics does not care; the fund is not HFT. Regulators do not care; the fund is below the threshold. Allocators do not care; the template does not ask. The operational scale does not care; the back office is somebody else's problem. The bug does not force the conversation, because the bug arrives only after the damage is done.
+
+The firms remembered a generation from now as serious institutions will be the ones whose founders chose engineering culture against the absence of pressure, because they understood that reproducibility, auditability, and the ability to outlive any individual researcher are not luxuries but the substance of what a systematic firm is. The rest will run on notebooks until the first handoff breaks.
+
+The real exhibit is not the public blow-ups that made the newspaper or SEC filings. It is the quiet accumulation of unexamined code, in shops that will never make a filing, until one day they do.
+
+:::{admonition} Sources
+:class: note
+- Wes McKinney, "A Roadmap for Rich Scientific Data Structures in Python" (2011); retrospective comments on pandas' early design appear across his personal blog and interviews.
+- AXA Rosenberg: SEC Administrative Proceeding File No. 3-14215 (February 2011); firm fined $217M plus $25M penalty.
+- Knight Capital: SEC Release No. 70694 (October 2013); internal post-mortem reconstructed the deprecated "Power Peg" code path.
+- JPMorgan London Whale: US Senate Permanent Subcommittee on Investigations report (March 2013), "JPMorgan Chase Whale Trades: A Case History of Derivatives Risks and Abuses."
+- Steve Mock, AQR: Institutional Investor's "Trading Tech 40" 2022, 2023, 2024.
+- Two Sigma Open Source LLC: https://www.twosigma.com/open-source/
+- D. E. Shaw research computing and Anton: https://www.deshawresearch.com/
+- ILPA Due Diligence Questionnaire 2.0 (2021): https://ilpa.org/due-diligence-questionnaire/
+:::

@@ -18,6 +18,19 @@
   }
 }
 
+figure.diagram {
+  margin: 2.5rem auto;
+  text-align: center;
+}
+figure.diagram img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+figure.diagram .diagram-dark { display: none; }
+.dark figure.diagram .diagram-light { display: none; }
+.dark figure.diagram .diagram-dark { display: inline-block; }
+
 @layer base {
   :root {
     /* Solarized Light */

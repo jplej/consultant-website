@@ -1,9 +1,15 @@
 ---
 title: ce site
 summary: Flask + Frozen-Flask + Tailwind, déployé sur Netlify. Markdown dans git.
-status: shipped
-stack: Flask, Jinja, Tailwind, Frozen-Flask, htmx
-repo: https://github.com/jplr/consultant-website
+stack: Flask, Jinja, Tailwind, Frozen-Flask
+repo: https://github.com/jplej/consultant-website
 ---
 
-Hello world.
+Un générateur de site statique écrit pour moi parce que tous ceux disponibles
+voulaient ajouter une fonctionnalité dont je ne voulais pas. Des routes Flask
+rendent des templates Jinja sur du contenu markdown. Frozen-Flask produit le
+HTML. Netlify le sert.
+
+Pas de CMS. Pas de base de données. Pas d'analytics. Le contenu vit dans
+`content/` sous forme de fichiers markdown. Pour publier, j'écris un fichier
+et je pousse.

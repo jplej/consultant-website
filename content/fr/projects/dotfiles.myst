@@ -1,0 +1,15 @@
+---
+title: dotfiles
+summary: Bureau Linux géré par chezmoi. Un outil par tâche, tout en texte.
+stack: chezmoi, bash, helix, kitty, tmux, rofi, polybar
+repo: https://github.com/jplej/dotfiles
+---
+
+Configuration Ubuntu minimale, au clavier. Helix comme éditeur, kitty comme
+terminal, tmux pour le multiplexing, rofi comme lanceur, polybar en barre de
+statut. Thème Nord partout. Pas de gestionnaire de plugins, pas de panneau
+de réglages graphique.
+
+Scan de secrets à chaque commit (gitleaks via pre-commit) et à chaque push
+(GitHub Actions). L'ensemble se reconstruit sur une installation Ubuntu
+fraîche en quelques minutes.

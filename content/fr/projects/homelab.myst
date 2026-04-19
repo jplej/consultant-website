@@ -1,8 +1,0 @@
----
-title: homelab
-summary: Serveur domestique auto-hébergé.
-status: active
-stack: Proxmox, Docker, Tailscale
----
-
-Hello world.

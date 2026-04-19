@@ -1,31 +1,58 @@
 ---
 title: How Power Shapes Your Codebase
 date: 2025-11-01
-summary: Most weird system choices make sense once you see the incentives behind them.
+summary: A firm's codebase is the sedimented record of who won which argument.
 ---
 
-The codebase is written by everyone. The org chart is written by management. When the two disagree, the codebase wins, because the codebase is what runs the firm.
+> A firm's codebase is the sedimented record of who won which argument. The famous blow-ups aren't technical failures; they are political archaeology becoming visible under load.
 
 ## A Good but Wrong Idea
 
-Years ago I joined a firm where the IT director told me, in my first month, that there was nothing that couldn't be done in SQL — including regression. No Python, no R, no source control. I argued. The tech stack was thirty years old. I was right and he was wrong, and it did not matter. The firm had been an SQL-only shop for over a decade. Every department I appealed to told me the same thing: change costs more than the project is worth, learn the constraint, move on. After two weeks of arguing, my boss took me into a small meeting room and told me to drop it.
+Early in my career I was told, in my first weeks at a new shop, that regressions would be written in SQL. Not Pandas, not R, not a notebook talking to a clean dataframe. SQL. The IT director said it plainly: there is nothing that cannot be done in SQL, including the regression. When I pointed out that the stack was thirty years old, the room went silent. The decision was final. No Python, no R, no source control.
 
-I understood years later. What I read as ignorance was a position. The IT director was a former DBA who had been promoted because management was quietly preparing to sell the firm, and any infrastructure investment would have shown up as a depreciating asset on the balance sheet. The codebase was preserving optionality for a transaction nobody had told me about. The decision wasn't bad architecture. It was good politics encoded as bad architecture.
+I was technically right, but organizationally useless. I spent two weeks annoying colleagues, none of whom agreed with me. The shop had been an SQL-only shop for over a decade. SQL solved every problem they had. What was different now? My boss eventually took me aside and told me to stop. The behavior was making him look bad.
 
-## The Strong Do What They Can, and the Weak Endure Their Suffering
+This is not a story about a junior being wrong. It is a story about what a codebase is. Most quants treat the stack as a technical artifact that happens to be suboptimal. It is not. It is a political settlement that happens to compile. The SQL-only shop was the visible surface of an argument that had been won, a long time ago, by people who were no longer in the room. The codebase does not document the firm; it *is* the firm, rendered in schemas and pipelines. Reading a codebase is reading a firm. Failing to read it is how careers stall and, at a different scale, how billions of dollars disappear in a single afternoon.
 
-Many infrastructure choices aren't deliberate decisions, they're accidents of history. SQL dominated that firm because of path dependency, not strategy. As a spin-off renting infrastructure from a parent institution, SQL databases were simply what was available. The early developers weren't choosing SQL to solve a problem; they were actual Database Administrators continuing what they'd always done. Pandas didn't exist yet, Python was a novelty, and nobody questioned the status quo. The infrastructure wasn't designed; it evolved from circumstance.
+## The Strong Do What They Can
 
-Some of these constraints can be lifted with the right business case. If a firm is blocked by vendor contracts, outdated tooling, or unnecessary architectural choices, modern solutions (cloud, APIs, containerization) often dissolve the problem at a tenth of the historical cost. Management may not even realize the problem is solvable. But other constraints are immovable: legal requirements mandating specific jurisdictions, compliance rules enforcing certain architectures, a transaction in preparation that cannot tolerate balance-sheet noise. This is what Martin Fowler calls prudent technical debt: a conscious choice given real constraints. Pushing against operational reality wastes political capital. The work is knowing which kind of constraint you are facing.
+Many infrastructure choices are not decisions; they are accidents of history. When the shop I joined was founded, Pandas did not exist, Python was a novelty, and the parent institution rented out SQL databases because that was what it had. The early developers were database administrators continuing what they had always done. Nothing was designed. Everything evolved.
 
-## The Org Chart is Your Architecture
+Martin Fowler distinguishes **prudent technical debt**, the kind taken deliberately under constraint, from the reckless and the inadvertent kinds. The distinction matters less than the question that precedes it: is the constraint movable or immovable? Vendor contracts, outdated tooling, cloud migrations: these are movable with a credible business case. Jurisdictional requirements, regulatory mandates, the capital structure of the firm itself: these are immovable. Pushing against an immovable constraint does nothing but burn political capital. Before proposing anything, the job is to figure out which kind of constraint you are facing. Most quants never do. They assume that because a constraint is technical in its expression, it is technical in its nature. It almost never is.
 
-Later that year, I learned about the sale that had been quietly prepared for months. To make the business attractive, management had slashed expenses, including "IT innovation." The DBA had become IT director not because anyone valued the technology but because it was cheap and represented zero risk. Meanwhile the operations and risk teams — finance professionals with real business needs — could not get database access from the central function. They were not SQL experts but they knew VBA. Over years, they built an entire parallel cash management ecosystem in Excel. Career advancement on those teams meant mastering the tribal system. The firm now had two infrastructures: the official SQL one and the shadow VBA one that actually moved cash.
+## The Org Chart Rendered in Schemas
 
-This is Conway's Law in action. Coined in 1967, it states that organizations design systems mirroring their communication structures. Translation: the codebase IS the business thesis. Always. When a firm splits into cliques with competing interests — different product visions, management conflicts, departments fighting for resources — the architecture fractures accordingly. The VBA cash system existed because of organizational politics: the DBA and management did not care, so someone built the workaround themselves. Years later, that workaround was still there. The org chart had been redrawn three times. The Excel files had not.
+Melvin Conway observed in 1967 that organizations design systems mirroring their communication structures. The implication is stronger than it sounds: the codebase is not influenced by the org chart, it *is* the org chart, materialized in a form you can run. When cliques have competing interests, when a product head and a risk head report to different executives, when a division is being prepped for sale, the architecture fractures along those lines. Always.
 
-## Technically Right vs Politically Correct
+The shop I had joined was, quietly, being prepared for acquisition. Expenses were slashed under the banner of "IT innovation." The DBA was promoted to IT director not because management understood the technology but because the promotion was cheap and represented zero risk. No one was investing in change while a sale was looming. Meanwhile the operations and risk teams, staffed with finance professionals who knew VBA but had no admin access to the central database, built an entire parallel cash management ecosystem with their own means. Career advancement on those teams required mastering the tribal tools. The shadow stack was not a workaround to a technical gap. It was the operational expression of who had access and who did not.
 
-The IT director wasn't stupid, and I wasn't wrong. We were playing different games. He represented the political reality of a firm preparing for sale; I was optimizing for technical elegance in a vacuum. The codebase encoded both positions, and only one of us understood the institution.
+## The Stress Test
 
-Conway's Law isn't a metaphor. It is what survives every reorganization, every leadership change, every story management tells about itself. Power shapes the codebase more reliably than design patterns ever do.
+In normal conditions, the Excel VaR model, the shadow VBA cash ledger, the fragmented margin methodology across a prime broker: all of it "works." The firm runs. The numbers print. The political geometry stays underground. A stress event does not break these systems in a technical sense. It activates them.
+
+> The codebase does not fail; it reveals.
+
+Archegos is the cleanest recent example. When the family office imploded in March 2021, Credit Suisse took a $5.5 billion loss not because its models were wrong but because its systems could not see what it was exposed to. Credit Suisse's own position against Archegos reached roughly $24 billion, more than four times the next-largest hedge fund client and over half the equity of the group. Across the street, total leveraged exposure spanning multiple prime brokers was in the same order of magnitude, and no single dealer could see the aggregate. Inside Credit Suisse itself, prime brokerage and prime financing operated with different margin methodologies on the same client. The blind spot was not a modeling error. It was the org chart, faithfully reproduced in the risk stack. When the positions unwound, each division discovered what the other division had been carrying. The firm's own external review, conducted by Paul Weiss, converged on the same diagnosis in politer language: Credit Suisse could not see itself.
+
+The pattern generalizes. Catastrophic loss in quant finance is almost never a quant error. The quants take the blame in the press release; the political structure that built the system walks. Look at any blow-up of the last twenty years and the post-mortem, read carefully, describes a codebase that encoded an argument nobody could revisit until the market forced the issue.
+
+## Technically Right, Politically Invisible
+
+The IT director was not stupid, and I was not wrong. We were playing different games. He was representing the business reality: a firm being sold, a team that could not absorb a new language, an infrastructure whose cost of change exceeded its cost of continuity. I was optimizing for technical elegance in a vacuum. Being technically right means nothing when the argument you are proposing to win was already settled, a decade earlier, by people whose interests the current director now inherits.
+
+This is why technical critique loses almost every time it is offered. The critique assumes that the codebase exists to serve the technical problem. The codebase exists to serve the political settlement. A proposal that ignores the settlement reads, correctly, as a proposal to reopen the settlement. The response is not "your argument is wrong." The response is silence, or a quiet conversation with your boss.
+
+The quants who advance are not the ones with the best technical diagnosis. They are the ones who can read the political debt on the balance sheet of the codebase and decide, case by case, whether to pay it down, route around it, or leave.
+
+## Two Readings of a Codebase
+
+For the insider, the stack is a forecast. It tells you what the firm will survive and what will break it. A DBA promoted for cost reasons during a pre-sale is not a technical signal; it is a signal about what the firm is about to become. A shadow VBA ecosystem is not an eccentricity; it is the map of who has real access and who has only formal authority. Insiders who read their own codebase correctly stay long enough to build something real, or leave before the political debt matures into headline risk.
+
+For the outsider, the codebase is the most honest interview document a firm produces. It is written by everyone, over years, with no intent to impress. Ask to see it. Ask what was hard to change and why. Ask what lives in Excel and who owns it. Ask what the last migration cost and who lost the argument. What the firm shows you, and what it cannot show you, is the firm. Design patterns will tell you nothing. Power shapes codebases far more than architecture ever will, and the codebase is where the shape becomes visible.
+
+:::{admonition} Sources
+:class: note
+- **Conway's Law.** Melvin E. Conway, "How Do Committees Invent?", *Datamation*, April 1968. Original paper at [melconway.com/Home/Committees_Paper.html](https://www.melconway.com/Home/Committees_Paper.html).
+- **Technical debt taxonomy.** Martin Fowler, "TechnicalDebtQuadrant", martinfowler.com, 2009. [martinfowler.com/bliki/TechnicalDebtQuadrant.html](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html).
+- **Archegos / Credit Suisse.** Paul, Weiss, Rifkind, Wharton & Garrison LLP, *Report on Archegos Capital Management*, prepared for the Special Committee of the Board of Directors of Credit Suisse Group AG, July 29, 2021. Covers the $5.5 billion loss, the $24 billion peak position, and the failures of margin methodology and aggregation across Prime Services. U.S. Senate Permanent Subcommittee on Investigations staff report, *The Default of Archegos Capital Management*, December 2023, documents cross-dealer exposure and the hedge-fund-in-family-office structure.
+:::

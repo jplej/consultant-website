@@ -1,0 +1,14 @@
+---
+title: dotfiles
+summary: Chezmoi-managed Linux desktop. One tool per job, text-only config.
+stack: chezmoi, bash, helix, kitty, tmux, rofi, polybar
+repo: https://github.com/jplej/dotfiles
+---
+
+Minimal, keyboard-driven Ubuntu setup. Helix as editor, kitty as terminal,
+tmux for multiplexing, rofi as launcher, polybar as status bar. Nord theme
+across everything. No plugin managers, no GUI settings panels.
+
+Secret-scanning gate on every commit (gitleaks via pre-commit) and on every
+push (GitHub Actions). The whole setup rebuilds on a fresh Ubuntu install in
+minutes.

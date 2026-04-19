@@ -1,6 +1,7 @@
 from flask_frozen import Freezer
 
 from app import CONTENT, app
+from diagrams import reset_cache
 from i18n import LANGS
 
 app.config["FREEZER_DESTINATION"] = "build"
@@ -45,4 +46,5 @@ def feed():
 
 
 if __name__ == "__main__":
+    reset_cache()
     freezer.freeze()

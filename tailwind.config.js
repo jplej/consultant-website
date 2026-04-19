@@ -68,8 +68,8 @@ module.exports = {
   darkMode: 'class',
   content: [
     "./templates/**/*.html",
-    "./content/**/*.md",
-    "./app.py",
+    "./content/**/*.{md,myst}",
+    "./*.py",
   ],
   theme: {
     extend: {
@@ -129,6 +129,26 @@ module.exports = {
               lineHeight: '1.6',
             },
             'hr': { borderColor: theme('colors.rule') },
+            '.admonition': {
+              backgroundColor: theme('colors.rule'),
+              borderLeft: `3px solid ${theme('colors.muted')}`,
+              padding: '1em 1.25em',
+              margin: '2em 0',
+              borderRadius: '3px',
+              fontSize: '0.95em',
+            },
+            '.admonition > :last-child': { marginBottom: '0' },
+            '.admonition > :first-child:not(.admonition-title)': { marginTop: '0' },
+            '.admonition-title': {
+              fontFamily:     fonts.sans.join(','),
+              fontSize:       '12px',
+              fontWeight:     '500',
+              letterSpacing:  '0.18em',
+              textTransform:  'uppercase',
+              color:          theme('colors.muted'),
+              marginTop:      '0',
+              marginBottom:   '0.75em',
+            },
           },
         },
       }),

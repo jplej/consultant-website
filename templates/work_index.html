@@ -3,30 +3,21 @@
 {% block description %}Projects by Jean-Philippe Lejeune — active, shipped, and archived.{% endblock %}
 {% block content %}
 <section class="pt-10">
-  {% set groups = {} %}
-  {% for p in projects %}
-    {% set _ = groups.setdefault(p.meta.status or 'shipped', []).append(p) %}
-  {% endfor %}
-
-  {% for status in ['active', 'shipped', 'archived'] %}
-    {% if groups.get(status) %}
-      <h2 class="text-meta mt-12 mb-4 flex items-center gap-3">
-        <span>{{ t[status] }}</span>
-        <span class="h-px flex-1 bg-rule"></span>
-      </h2>
-      <ul class="space-y-6">
-        {% for p in groups[status] %}
-          <li>
-            <a href="/{{ lang }}/work/{{ p.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">
-              {{ p.meta.title }}
-            </a>
-            {% if p.meta.summary %}
-              <p class="text-muted mt-1">{{ p.meta.summary }}</p>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {% endfor %}
+  {% if not projects %}
+    <p class="text-muted">Soon.</p>
+  {% else %}
+    <ul class="space-y-6">
+      {% for p in projects %}
+        <li>
+          <a href="/{{ lang }}/work/{{ p.slug }}/" class="text-ink underline underline-offset-4 decoration-rule hover:decoration-action">
+            {{ p.meta.title }}
+          </a>
+          {% if p.meta.summary %}
+            <p class="text-muted mt-1">{{ p.meta.summary }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </section>
 {% endblock %}

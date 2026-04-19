@@ -10,18 +10,18 @@ from myst_parser.parsers.docutils_ import Parser as MystParser
 from werkzeug.routing import BaseConverter
 
 from i18n import DEFAULT_LANG, LANGS, STRINGS, other
-from mermaid import render_mermaid_blocks
+from diagrams import render_mermaid_blocks
 
 CONTENT = Path(__file__).parent / "content"
 SITE_NAME = "Astus"
 SITE_URL = "https://astuscg.com"
-AUTHOR_EMAIL = "jp@astuscg.com"
+AUTHOR_EMAIL = "jp.lejeune@astuscg.com"
 
 MYST_EXTENSIONS = [
     "colon_fence", "deflist", "fieldlist", "tasklist",
     "strikethrough", "attrs_inline", "attrs_block",
     "smartquotes", "replacements",
-    "dollarmath", "amsmath", "substitution",
+    "substitution",
 ]
 
 
@@ -114,8 +114,7 @@ def essay(lang, slug):
 @app.route("/<lang:lang>/work/")
 def work_index(lang):
     projects = load_collection(lang, "projects")
-    order = {"active": 0, "shipped": 1, "archived": 2}
-    projects.sort(key=lambda d: (order.get(d["meta"].get("status", "shipped"), 9), d["slug"]))
+    projects.sort(key=lambda d: d["slug"])
     return render_template("work_index.html", projects=projects)
 
 
