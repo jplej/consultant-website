@@ -1,4 +1,4 @@
-LANGS = ("en", "fr")
+LANGS = ("en",)
 DEFAULT_LANG = "en"
 
 STRINGS = {

@@ -129,6 +129,68 @@ module.exports = {
               lineHeight: '1.6',
             },
             'hr': { borderColor: theme('colors.rule') },
+            'table': {
+              fontSize:       '0.95em',
+              lineHeight:     '1.5',
+              margin:         '2em auto',
+              borderCollapse: 'collapse',
+            },
+            'th, td': {
+              border:        `1px solid ${theme('colors.rule')}`,
+              padding:       '0.7em 1em',
+              textAlign:     'left',
+              verticalAlign: 'top',
+            },
+            'thead th': {
+              fontFamily:      fonts.sans.join(','),
+              fontSize:        '12px',
+              fontWeight:      '500',
+              letterSpacing:   '0.12em',
+              textTransform:   'uppercase',
+              color:           theme('colors.muted'),
+              backgroundColor: theme('colors.rule'),
+              borderColor:     theme('colors.rule'),
+            },
+            // `.tetrad` -- 2x2 matrix (quadrant chart).
+            // Apply with `{.tetrad}` above a pipe table in MyST.
+            // Top-row and left-column cells are axis-pole labels (identical typography).
+            // Only the four body cells form the grid; the top-left corner is blank.
+            'table.tetrad': {
+              width:       '100%',
+              tableLayout: 'fixed',
+              margin:      '2.5em auto',
+            },
+            'table.tetrad th, table.tetrad td': {
+              border:        '0',
+              background:    'transparent',
+              textAlign:     'center',
+              verticalAlign: 'middle',
+              padding:       '1em',
+            },
+            // Axis-pole labels: column headers and first-column cells, same treatment.
+            'table.tetrad thead th, table.tetrad tbody td:first-child': {
+              fontFamily:    fonts.sans.join(','),
+              fontSize:      '12px',
+              fontWeight:    '500',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color:         theme('colors.muted'),
+            },
+            'table.tetrad tbody td:first-child': {
+              textAlign: 'right',
+            },
+            'table.tetrad tbody td:first-child strong': {
+              fontWeight: '500',
+              color:      theme('colors.muted'),
+            },
+            // Quadrant cells: the only bordered region, forms a 2x2 grid.
+            'table.tetrad tbody td:not(:first-child)': {
+              border:     `1px solid ${theme('colors.rule')}`,
+              padding:    '2em 1em',
+              fontFamily: fonts.serif.join(','),
+              fontSize:   '1.05em',
+              color:      theme('colors.ink'),
+            },
             '.admonition': {
               backgroundColor: theme('colors.rule'),
               borderLeft: `3px solid ${theme('colors.muted')}`,

@@ -25,12 +25,6 @@
     </nav>
 
     <div class="flex items-stretch justify-self-end">
-      <a href="{{ request.path|replace('/' ~ lang ~ '/', '/' ~ other_lang ~ '/') }}"
-         aria-label="{{ other_lang|upper }}" title="{{ other_lang|upper }}"
-         class="bar-btn font-sans text-xs font-bold uppercase tracking-widest">
-        {{ other_lang|upper }}
-      </a>
-
       <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"
               class="bar-btn">
         <iconify-icon icon="lucide:sun" width="20" height="20" stroke-width="2.25" class="hidden dark:block"></iconify-icon>

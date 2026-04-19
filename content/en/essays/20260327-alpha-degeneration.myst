@@ -11,17 +11,11 @@ University introduced me to a paradigm without teaching me what a paradigm is. T
 
 The fastest way to understand how alpha is generated is to ask two questions about any investment firm. First: is knowledge centralized or decentralized? A single rebalancing engine running above everyone, or portfolio managers debating rates and returning to their separate trades. Second: is infrastructure centralized or decentralized? One shared environment that everyone uses, or a pile of disconnected logins assembled overnight. Cross the two and you get four distinct forms, each with its own social contract between the individual and the institution. This essay is about what those forms are, and how they degenerate.
 
-```mermaid
-%% alt: Four forms of investment firm, crossed on two axes — knowledge centralization and infrastructure centralization
-quadrantChart
-  title Four forms of investment firm
-  x-axis Ad Hoc Stack --> Shared Platform
-  y-axis Many Books --> One System
-  quadrant-1 Apparatus
-  quadrant-2 Monarchy
-  quadrant-3 Network
-  quadrant-4 Platform
-```
+{.tetrad}
+|                | Ad Hoc Stack | Shared Platform |
+|----------------|--------------|-----------------|
+| **One System** | Monarchy     | Apparatus       |
+| **Many Books** | Network      | Platform        |
 
 ## The Network
 
