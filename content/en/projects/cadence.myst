@@ -1,0 +1,14 @@
+---
+title: cadence
+summary: Open-source budgeting app for multi-partner projects with multiyear cashflow.
+stack: Django, Django Ninja, PostgreSQL
+repo: https://github.com/jplej/cadence-budget
+status: development
+---
+
+Budget management for partnership structures where traditional accounting doesn't apply.
+Built for co-productions, artistic projects, and anyone managing shared finances across
+multiple partners — with forecast vs realized tracking, cost-sharing splits, and
+profit distribution waterfalls.
+
+Early alpha. API-first, no UI yet.

@@ -3,6 +3,7 @@ title: dotfiles
 summary: Chezmoi-managed Linux desktop. One tool per job, text-only config.
 stack: chezmoi, bash, helix, kitty, tmux, rofi, polybar
 repo: https://github.com/jplej/dotfiles
+status: production
 ---
 
 Minimal, keyboard-driven Ubuntu setup. Helix as editor, kitty as terminal,

@@ -24,8 +24,6 @@ In traditional asset management, it is **operational scale**. A firm running hun
 
 Now consider the systematic, non-HFT fund. Holding periods of days to months. Research code that runs slowly is not punished by the clock. No prudential regulator examines the model pipeline. The operational back office uses a proper fund administrator, so the research stack never hits the operational scale that triggers a vendor decision.
 
-> The forcing function is absent by construction.
-
 The engineering has to come from somewhere internal, or it does not come at all.
 
 ## What Makes the Papers, What Doesn't

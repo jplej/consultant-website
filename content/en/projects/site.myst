@@ -3,6 +3,7 @@ title: this site
 summary: Flask + Frozen-Flask + Tailwind, deployed to Netlify. Markdown in git.
 stack: Flask, Jinja, Tailwind, Frozen-Flask
 repo: https://github.com/jplej/consultant-website
+status: production
 ---
 
 A static site generator I wrote for myself because every off-the-shelf one
